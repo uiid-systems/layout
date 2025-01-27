@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { WrapperSwitch } from "../wrapper-switch";
 
 const meta = {
-  title: "Wrapper: Switch",
+  title: "Wrappers/Switch",
   component: WrapperSwitch,
   args: {
     condition: true,
@@ -23,5 +23,5 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  name: "Wrapper: Switch",
+  name: "Switch",
 };

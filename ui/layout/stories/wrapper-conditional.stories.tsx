@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { WrapperConditional } from "../wrapper-conditional";
 
 const meta = {
-  title: "Wrapper: Conditional",
+  title: "Wrappers/Conditional",
   component: WrapperConditional,
   args: {
     condition: true,
@@ -20,5 +20,5 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  name: "Wrapper: Conditional",
+  name: "Conditional",
 };

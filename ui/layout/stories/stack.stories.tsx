@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Stack } from "../stack";
 
 const meta = {
-  title: "Stack",
+  title: "Layout/Stack",
   component: Stack,
   args: {},
   render: (args) => (

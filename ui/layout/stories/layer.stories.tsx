@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Layer } from "../layer";
 
 const meta = {
-  title: "Layer",
+  title: "Layout/Layer",
   component: Layer,
   args: {},
   render: (args) => (

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Box } from "../box";
 
 const meta = {
-  title: "Box",
+  title: "Primitives/Box",
   component: Box,
   args: {},
   render: (args) => <Box {...args} className="bg-[gold] size-16" />,
