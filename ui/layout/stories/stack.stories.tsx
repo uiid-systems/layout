@@ -24,6 +24,14 @@ export const Default: Story = {
 export const Evenly: Story = {
   args: {
     evenly: true,
-    className: "h-[90dvh]",
+    className: "h-[calc(100dvh-2rem)]",
+  },
+};
+
+export const Wrap: Story = {
+  args: {
+    inline: true,
+    wrap: true,
+    className: "max-h-40",
   },
 };

@@ -7,6 +7,7 @@ export const stackStyles = cva({
   variants: {
     evenly: { true: "*:flex-1" },
     inline: { true: "inline-flex" },
+    wrap: { true: "flex-wrap" },
   },
   defaultVariants: {},
 });
@@ -25,6 +26,7 @@ export const Stack = ({
   /** variants */
   evenly,
   inline,
+  wrap,
   /** other */
   className,
   children,
@@ -34,7 +36,7 @@ export const Stack = ({
     data-uiid="stack"
     ax={ay}
     ay={ax}
-    className={cx(stackStyles({ evenly, inline, className }))}
+    className={cx(stackStyles({ evenly, inline, wrap, className }))}
     {...props}
   >
     {children}

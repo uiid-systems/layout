@@ -16,9 +16,9 @@ export function WrapperSwitch({
 }: WrapperSwitchProps) {
   const selectedWrapper = condition ? wrappers.true : wrappers.false;
 
-  return selectedWrapper ? (
-    cloneElement(selectedWrapper, undefined, children)
-  ) : (
-    <>{children}</>
-  );
+  if (!selectedWrapper) return <>{children}</>;
+
+  const contentToRender = children ?? selectedWrapper.props.children;
+
+  return cloneElement(selectedWrapper, undefined, contentToRender);
 }

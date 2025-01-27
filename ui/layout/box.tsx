@@ -14,12 +14,13 @@ type Render = React.ReactElement<
   React.PropsWithChildren<{ className?: string }>
 >;
 
-export type BoxProps = {
+export type BoxProps = React.PropsWithChildren<{
   render?: (() => Render) | Render;
-} & ResponsiveProps &
-  VariantProps<typeof boxStyles> &
+  ref?: React.Ref<any>;
+}> &
   React.HTMLAttributes<HTMLElement> &
-  React.PropsWithChildren;
+  VariantProps<typeof boxStyles> &
+  ResponsiveProps;
 
 export const Box = ({
   /** responsive-props */
@@ -40,6 +41,7 @@ export const Box = ({
   /** other */
   className,
   children,
+  ref,
   ...props
 }: BoxProps) => {
   const boxClassName = cx(
@@ -78,7 +80,7 @@ export const Box = ({
   }
 
   return (
-    <div data-uiid="box" className={boxClassName} {...props}>
+    <div data-uiid="box" ref={ref} className={boxClassName} {...props}>
       {children}
     </div>
   );
