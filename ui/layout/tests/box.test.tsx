@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { createRef } from "react";
 import { describe, test, expect } from "vitest";
 
-import { Box } from "../box";
+import { Box } from "../components/box";
 
 const text = "lorem ipsum";
 

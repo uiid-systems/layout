@@ -1,8 +1,7 @@
 import { render, screen } from "@testing-library/react";
-import { createRef } from "react";
 import { describe, test, expect } from "vitest";
 
-import { WrapperConditional } from "../wrapper-conditional";
+import { WrapperConditional } from "../components/wrapper-conditional";
 
 const text = "lorem ipsum";
 
