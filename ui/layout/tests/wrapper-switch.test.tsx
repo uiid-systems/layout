@@ -1,8 +1,7 @@
 import { render, screen } from "@testing-library/react";
-import { createRef } from "react";
 import { describe, test, expect } from "vitest";
 
-import { WrapperSwitch } from "../wrapper-switch";
+import { WrapperSwitch } from "../components/wrapper-switch";
 
 const true_text = "true";
 const false_text = "false";

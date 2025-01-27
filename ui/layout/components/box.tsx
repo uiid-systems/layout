@@ -2,7 +2,7 @@ import { isValidElement, cloneElement } from "react";
 
 import { cva, cx, VariantProps } from "@/ui/cva";
 
-import { responsiveStyles, type ResponsiveProps } from "./responsive-props";
+import { responsiveStyles, type ResponsiveProps } from "../responsive-props";
 
 export const boxStyles = cva({
   base: "",

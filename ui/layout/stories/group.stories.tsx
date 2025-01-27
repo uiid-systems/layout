@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Group } from "../group";
+
+import { Group } from "../components/group";
 
 const meta = {
   title: "Layout/Group",

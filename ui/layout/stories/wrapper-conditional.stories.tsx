@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { WrapperConditional } from "../wrapper-conditional";
+
+import { WrapperConditional } from "../components/wrapper-conditional";
 
 const meta = {
   title: "Wrappers/Conditional",

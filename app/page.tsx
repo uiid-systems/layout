@@ -1,11 +1,14 @@
 import { cx } from "@/ui/cva";
 
-import { Box, type BoxProps } from "@/ui/layout/box";
-import { WrapperConditional } from "@/ui/layout/wrapper-conditional";
-import { WrapperSwitch } from "@/ui/layout/wrapper-switch";
-import { Group } from "@/ui/layout/group";
-import { Stack } from "@/ui/layout/stack";
-import { Layer } from "@/ui/layout/layer";
+import {
+  Box,
+  type BoxProps,
+  Group,
+  Stack,
+  Layer,
+  WrapperConditional,
+  WrapperSwitch,
+} from "@/ui/layout";
 
 const condition = true;
 

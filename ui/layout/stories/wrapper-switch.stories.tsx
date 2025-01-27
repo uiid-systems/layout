@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { WrapperSwitch } from "../wrapper-switch";
+
+import { WrapperSwitch } from "../components/wrapper-switch";
 
 const meta = {
   title: "Wrappers/Switch",
