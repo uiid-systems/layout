@@ -16,10 +16,10 @@ type Render = React.ReactElement<
 
 export type BoxProps = {
   render?: (() => Render) | Render;
-} & React.PropsWithChildren &
-  React.HTMLAttributes<HTMLElement> &
+} & ResponsiveProps &
   VariantProps<typeof boxStyles> &
-  ResponsiveProps;
+  React.HTMLAttributes<HTMLElement> &
+  React.PropsWithChildren;
 
 export const Box = ({
   /** responsive-props */
@@ -60,32 +60,28 @@ export const Box = ({
     })
   );
 
-  const renderComponent = (): React.ReactNode => {
-    if (typeof render === "function") {
-      const rendered = render();
-      return cloneElement(rendered, {
-        ...props,
-        children: children || rendered.props.children,
-        className: cx(boxClassName, rendered.props.className),
-      });
-    }
+  if (typeof render === "function") {
+    const rendered = render();
+    return cloneElement(rendered, {
+      ...props,
+      children: children || rendered.props.children,
+      className: cx(boxClassName, rendered.props.className),
+    });
+  }
 
-    if (isValidElement(render)) {
-      return cloneElement(render, {
-        ...props,
-        children: children || render.props.children,
-        className: cx(boxClassName, render.props.className),
-      });
-    }
+  if (isValidElement(render)) {
+    return cloneElement(render, {
+      ...props,
+      children: children || render.props.children,
+      className: cx(boxClassName, render.props.className),
+    });
+  }
 
-    return (
-      <div data-ui="box" className={boxClassName} {...props}>
-        {children}
-      </div>
-    );
-  };
-
-  return renderComponent();
+  return (
+    <div data-uiid="box" className={boxClassName} {...props}>
+      {children}
+    </div>
+  );
 };
 
 Box.displayName = "Box";

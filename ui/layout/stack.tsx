@@ -29,7 +29,7 @@ export const Stack = ({
   ...props
 }: StackProps) => (
   <Box
-    data-ui="stack"
+    data-uiid="stack"
     ax={ay}
     ay={ax}
     className={cx(stackStyles({ inline, className }))}

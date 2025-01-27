@@ -5,7 +5,7 @@ import { Box, type BoxProps } from "./box";
 const groupStyles = cva({
   base: ["flex"],
   variants: {
-    evenly: { true: "[&>*]:flex-1" },
+    evenly: { true: "*:flex-1" },
     inline: { true: "inline-flex" },
     wrap: { true: "flex-wrap" },
   },
@@ -26,7 +26,7 @@ export const Group = ({
 }: GroupProps) => {
   return (
     <Box
-      data-ui="group"
+      data-uiid="group"
       className={cx(groupStyles({ evenly, inline, wrap, className }))}
       {...props}
     >

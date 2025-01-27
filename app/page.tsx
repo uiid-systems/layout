@@ -12,49 +12,44 @@ const condition = true;
 export default function Home() {
   return (
     <main className="flex gap-12 min-h-screen items-center justify-center">
-      {/** box */}
       <Placeholder />
 
-      {/** group */}
       <Group gap="small">
-        <Placeholder />
-        <Placeholder render={<h1 />} className="bg-[tomato]" />
-        <Placeholder render={() => <h2 className="bg-[mediumseagreen]" />} />
+        <PlaceholderGroup />
       </Group>
 
-      {/** stack */}
       <Stack gap="small">
-        <Placeholder />
-        <Placeholder render={<h1 />} className="bg-[tomato]" />
-        <Placeholder render={() => <h2 className="bg-[mediumseagreen]" />} />
+        <PlaceholderGroup />
       </Stack>
 
-      {/** layer */}
+      {/** @todo support single child fragment */}
       <Layer offset={{ x: 20, y: 20 }}>
-        <Placeholder className="bg-[gold]" />
-        <Placeholder render={<h1 />} className="bg-[tomato]" />
-        <Placeholder render={() => <h2 className="bg-[mediumseagreen]" />} />
+        <Placeholder />
+        <Placeholder render={<h1 />} className="bg-primary" />
+        <Placeholder render={() => <h2 className="bg-tertiary" />} />
       </Layer>
 
-      {/** wrapper-conditional */}
-      <WrapperConditional condition={condition} wrapper={<Placeholder />}>
-        {condition.toString()}
-      </WrapperConditional>
+      <WrapperConditional condition={condition} wrapper={<Placeholder />} />
 
-      {/** wrapper-switch */}
       <WrapperSwitch
         condition={condition}
         wrappers={{
-          true: <Placeholder className="bg-[mediumseagreen]" />,
-          false: <Placeholder className="bg-[tomato]" />,
+          true: <Placeholder className="bg-tertiary" />,
+          false: <Placeholder className="bg-primary" />,
         }}
-      >
-        {condition.toString()}
-      </WrapperSwitch>
+      />
     </main>
   );
 }
 
+const PlaceholderGroup = () => (
+  <>
+    <Placeholder />
+    <Placeholder render={<h1 />} className="bg-primary" />
+    <Placeholder render={() => <h2 className="bg-tertiary" />} />
+  </>
+);
+
 const Placeholder = ({ className, ...props }: BoxProps) => (
-  <Box className={cx("bg-[gold] size-16", className)} {...props} />
+  <Box className={cx("bg-secondary size-16", className)} {...props} />
 );

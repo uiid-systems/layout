@@ -11,7 +11,7 @@ export default function RootLayout({
 }: Readonly<React.PropsWithChildren>) {
   return (
     <html lang="en">
-      <body className={`antialiased`}>{children}</body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
