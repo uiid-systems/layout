@@ -5,6 +5,7 @@ import { Box, type BoxProps } from "./box";
 export const stackStyles = cva({
   base: ["flex", "flex-col"],
   variants: {
+    evenly: { true: "*:flex-1" },
     inline: { true: "inline-flex" },
   },
   defaultVariants: {},
@@ -22,6 +23,7 @@ export const Stack = ({
   ax,
   ay,
   /** variants */
+  evenly,
   inline,
   /** other */
   className,
@@ -32,7 +34,7 @@ export const Stack = ({
     data-uiid="stack"
     ax={ay}
     ay={ax}
-    className={cx(stackStyles({ inline, className }))}
+    className={cx(stackStyles({ evenly, inline, className }))}
     {...props}
   >
     {children}

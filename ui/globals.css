@@ -2,22 +2,13 @@
 
 @theme {
   --color-*: initial;
-
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-
-  --color-primary: var(--primary);
-  --color-secondary: var(--secondary);
-  --color-tertiary: var(--tertiary);
 }
 
 :root {
   --white: #fff;
   --black: #000;
-
-  --primary: tomato;
-  --secondary: gold;
-  --tertiary: mediumseagreen;
 
   --background: var(--white);
   --foreground: var(--black);

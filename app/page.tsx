@@ -25,8 +25,8 @@ export default function Home() {
       {/** @todo support single child fragment */}
       <Layer offset={{ x: 20, y: 20 }}>
         <Placeholder />
-        <Placeholder render={<h1 />} className="bg-primary" />
-        <Placeholder render={() => <h2 className="bg-tertiary" />} />
+        <Placeholder render={<h1 />} className="bg-[tomato]" />
+        <Placeholder render={() => <h2 className="bg-[mediumseagreen]" />} />
       </Layer>
 
       <WrapperConditional condition={condition} wrapper={<Placeholder />} />
@@ -34,8 +34,8 @@ export default function Home() {
       <WrapperSwitch
         condition={condition}
         wrappers={{
-          true: <Placeholder className="bg-tertiary" />,
-          false: <Placeholder className="bg-primary" />,
+          true: <Placeholder className="bg-[mediumseagreen]" />,
+          false: <Placeholder className="bg-[tomato]" />,
         }}
       />
     </main>
@@ -45,11 +45,11 @@ export default function Home() {
 const PlaceholderGroup = () => (
   <>
     <Placeholder />
-    <Placeholder render={<h1 />} className="bg-primary" />
-    <Placeholder render={() => <h2 className="bg-tertiary" />} />
+    <Placeholder render={<h1 />} className="bg-[tomato]" />
+    <Placeholder render={() => <h2 className="bg-[mediumseagreen]" />} />
   </>
 );
 
 const Placeholder = ({ className, ...props }: BoxProps) => (
-  <Box className={cx("bg-secondary size-16", className)} {...props} />
+  <Box className={cx("bg-[gold] size-16", className)} {...props} />
 );
