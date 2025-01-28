@@ -6,7 +6,9 @@ import { responsiveStyles, type ResponsiveProps } from "../responsive-props";
 
 export const boxStyles = cva({
   base: "",
-  variants: {},
+  variants: {
+    fullwidth: { true: "w-full" },
+  },
   defaultVariants: {},
 });
 
@@ -23,6 +25,8 @@ export type BoxProps = React.PropsWithChildren<{
   ResponsiveProps;
 
 export const Box = ({
+  /** variants */
+  fullwidth,
   /** responsive-props */
   ax,
   ay,
@@ -45,7 +49,7 @@ export const Box = ({
   ...props
 }: BoxProps) => {
   const boxClassName = cx(
-    boxStyles({ className }),
+    boxStyles({ fullwidth, className }),
     responsiveStyles({
       ax,
       ay,
