@@ -4,9 +4,11 @@ import { cx } from "@/ui/cva";
 
 import { Box, type BoxProps } from "./box";
 
+type Slot = React.ReactElement<any>;
+
 export type WrapperSlotsProps = {
-  before?: React.ReactElement<any>;
-  after?: React.ReactElement<any>;
+  before?: Slot;
+  after?: Slot;
 } & BoxProps;
 
 export const WrapperSlots = ({
