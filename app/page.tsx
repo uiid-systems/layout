@@ -8,7 +8,7 @@ import {
   Layer,
   WrapperConditional,
   WrapperSwitch,
-} from "@/ui/layout";
+} from "layout";
 
 const condition = true;
 

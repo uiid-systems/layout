@@ -1,23 +1,46 @@
 {
-  "name": "layout",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@uiid/layout",
+  "version": "0.0.0",
+  "private": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
+  "sideEffects": false,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build:next": "next build",
+    "build:tsup": "rm -rf dist && tsup",
+    "release": "pnpm run build:tsup && changeset publish",
+    "version": "changeset version",
+    "changeset": "changeset",
     "start": "next start",
     "lint": "next lint",
     "test": "vitest",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
-  "dependencies": {
-    "cva": "1.0.0-beta.3",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      }
+    }
+  },
+  "peerDependencies": {
+    "layout": "link:/Users/adamfratino/www/layout/dist",
     "next": "15.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
+  "dependencies": {
+    "cva": "1.0.0-beta.3"
+  },
   "devDependencies": {
+    "@changesets/cli": "^2.27.12",
     "@eslint/eslintrc": "^3",
     "@storybook/addon-essentials": "^8.5.1",
     "@storybook/addon-interactions": "^8.5.1",
@@ -40,6 +63,7 @@
     "storybook": "^8.5.1",
     "tailwind-merge": "^2.6.0",
     "tailwindcss": "^4.0.0",
+    "tsup": "^8.3.6",
     "typescript": "^5",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.0.4"
