@@ -1,7 +1,7 @@
 import { defineConfig } from "tsup";
 
 export default defineConfig({
-  entry: ["ui/layout/index.ts"],
+  entry: ["src/layout/index.ts"],
   format: ["esm", "cjs"],
   target: "es2020",
   dts: true,

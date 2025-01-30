@@ -1,2 +1,2 @@
 import "@testing-library/jest-dom";
-import "@/ui/globals.css";
+import "./src/globals.css";
