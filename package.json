@@ -31,7 +31,6 @@
     }
   },
   "peerDependencies": {
-    "layout": "link:/Users/adamfratino/www/layout/dist",
     "next": "15.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
