@@ -1,6 +1,8 @@
 export type VariantProps = {
-  fullwidth?: boolean;
+  centered?: boolean;
   evenly?: boolean;
-  wrap?: boolean;
+  fullwidth?: boolean;
+  hide?: boolean;
   inline?: boolean;
+  wrap?: boolean;
 };

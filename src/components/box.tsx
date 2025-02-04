@@ -1,12 +1,12 @@
-import { isValidElement, cloneElement } from "react";
+import { isValidElement, cloneElement, useId } from "react";
 
 import { cx } from "@uiid/core";
 
-import { responsiveStyles, type ResponsiveProps } from "../responsive-props";
+import { responsiveProps, type StyleProps } from "../responsive-props";
 import type { VariantProps } from "../types";
 
 type Render = React.ReactElement<
-  React.PropsWithChildren<{ className?: string }>
+  React.PropsWithChildren<{ className?: string; "data-uiid-unique": string }>
 >;
 
 export type BoxProps = React.PropsWithChildren<{
@@ -14,82 +14,90 @@ export type BoxProps = React.PropsWithChildren<{
   ref?: React.Ref<any>;
 }> &
   React.HTMLAttributes<HTMLElement> &
-  ResponsiveProps &
-  VariantProps;
+  VariantProps &
+  StyleProps;
 
 export const Box = ({
   /** variants */
-  fullwidth,
+  centered,
   evenly,
+  fullwidth,
+  hide,
   inline,
   wrap,
-  /** responsive-props */
+  /** styles */
   ax,
   ay,
   direction,
-  gap,
-  m,
-  mx,
-  my,
-  p,
-  px,
-  py,
-  visibility,
-  w,
   /** composition */
   render,
   /** other */
-  className,
   children,
   ref,
   ...props
 }: BoxProps) => {
-  const boxClassName = cx(
-    className,
-    responsiveStyles({
-      ax,
-      ay,
-      direction,
-      gap,
-      m,
-      mx,
-      my,
-      p,
-      px,
-      py,
-      visibility,
-      w,
-    })
+  const unique = useId();
+
+  const responsiveProps2 = { ax, ay, direction };
+  const hasResponsiveProps = !!Object.values(responsiveProps2).join("");
+
+  const ids = {
+    "data-uiid": "box",
+    "data-uiid-unique": unique,
+  };
+
+  const common = {
+    ...ids,
+    "data-centered": centered,
+    "data-evenly": evenly,
+    "data-fullwidth": fullwidth,
+    "data-hide": hide,
+    "data-inline": inline,
+    "data-wrap": wrap,
+    ...props,
+  };
+
+  const style = hasResponsiveProps && (
+    <style
+      dangerouslySetInnerHTML={{
+        __html: responsiveProps({
+          props: { ax, ay, direction },
+          selector: `[data-uiid-unique="${unique}"]`,
+        }),
+      }}
+    />
   );
 
   if (typeof render === "function") {
     const rendered = render();
     return cloneElement(rendered, {
-      ...props,
-      children: children || rendered.props.children,
-      className: cx(boxClassName, rendered.props.className),
+      ...common,
+      children: (
+        <>
+          {responsiveProps2 && style}
+          {children || rendered.props.children}
+        </>
+      ),
+      className: cx(props.className, rendered.props.className),
     });
   }
 
   if (isValidElement(render)) {
     return cloneElement(render, {
-      ...props,
-      children: children || render.props.children,
-      className: cx(boxClassName, render.props.className),
+      ...common,
+      children: (
+        <>
+          {style}
+          {children || render.props.children}
+        </>
+      ),
+      className: cx(props.className, render.props.className),
     });
   }
 
   return (
-    <div
-      data-uiid="box"
-      data-fullwidth={fullwidth}
-      data-evenly={evenly}
-      data-inline={inline}
-      data-wrap={wrap}
-      ref={ref}
-      className={boxClassName}
-      {...props}
-    >
+    <div {...common}>
+      {style}
       {children}
     </div>
   );

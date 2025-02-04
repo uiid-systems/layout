@@ -6,7 +6,6 @@ const meta = {
   title: "Wrappers/Slots",
   component: WrapperSlots,
   args: {
-    gap: "small",
     before: <div className="bg-[tomato] size-16" />,
     after: <div className="bg-[mediumseagreen] size-16" />,
   },

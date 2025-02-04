@@ -18,6 +18,7 @@
     "build-storybook": "storybook build"
   },
   "exports": {
+    "./styles.css": "./dist/styles.css",
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs"
@@ -30,7 +31,7 @@
     "node": ">=18.0.0"
   },
   "dependencies": {
-    "@uiid/core": "0.0.0-alpha.4"
+    "@uiid/core": "latest"
   },
   "peerDependencies": {
     "react": "^19.0.0",

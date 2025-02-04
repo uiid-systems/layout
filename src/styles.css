@@ -15,19 +15,28 @@
     }
   }
 
-  [data-evenly] > * {
+  [data-evenly="true"] > * {
     flex: 1;
   }
 
-  [data-fullwidth] {
+  [data-fullwidth="true"] {
     width: 100%;
   }
 
-  [data-inline] {
+  [data-inline="true"] {
     display: inline-flex;
   }
 
-  [data-wrap] {
+  [data-wrap="true"] {
     flex-wrap: wrap;
+  }
+
+  [data-centered="true"] {
+    align-items: center;
+    justify-content: center;
+  }
+
+  [data-hide="true"] {
+    display: "none";
   }
 }

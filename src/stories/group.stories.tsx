@@ -7,7 +7,7 @@ const meta = {
   component: Group,
   args: {},
   render: (args) => (
-    <Group gap="small" {...args}>
+    <Group {...args}>
       <div className="bg-[tomato] size-16" />
       <div className="bg-[gold] size-16" />
       <div className="bg-[mediumseagreen] size-16" />

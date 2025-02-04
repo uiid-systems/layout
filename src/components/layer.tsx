@@ -45,6 +45,7 @@ export const Layer = ({
     <Box
       data-uiid="layer"
       data-layer-id={offset ? id : undefined}
+      /** @todo no more tailwind */
       className={cx(className, {
         "*:translate-x-[calc(var(--offsetX)*var(--mult)*1px)]": offset?.x,
         "*:translate-y-[calc(var(--offsetY)*var(--mult)*1px)]": offset?.y,
@@ -52,8 +53,8 @@ export const Layer = ({
       style={{ ...offsetStyles, ...style }}
       {...props}
     >
-      {offset && multiplierStyles(childCount)}
       {children}
+      {offset && multiplierStyles(childCount)}
     </Box>
   );
 };

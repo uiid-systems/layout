@@ -7,7 +7,7 @@ const meta = {
   component: Stack,
   args: {},
   render: (args) => (
-    <Stack gap="small" {...args}>
+    <Stack {...args}>
       <div className="bg-[tomato] size-16" />
       <div className="bg-[gold] size-16" />
       <div className="bg-[mediumseagreen] size-16" />
