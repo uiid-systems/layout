@@ -12,7 +12,10 @@ const groupStyles = cva({
   defaultVariants: {},
 });
 
-export type GroupProps = BoxProps & VariantProps<typeof groupStyles>;
+export type GroupProps = {
+  evenly?: boolean;
+} & BoxProps &
+  VariantProps<typeof groupStyles>;
 
 export const Group = ({
   /** variants */

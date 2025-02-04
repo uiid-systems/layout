@@ -1,0 +1,8 @@
+@import "@uiid/core/globals.css";
+@import "tailwindcss";
+
+@theme {
+  --color-*: initial;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
