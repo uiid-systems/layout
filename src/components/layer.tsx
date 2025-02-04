@@ -9,7 +9,7 @@ export type LayerProps = {
     x?: number;
     y?: number;
   };
-} & Omit<BoxProps, "gap">;
+} & BoxProps;
 
 export const Layer = ({
   offset,
