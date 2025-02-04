@@ -1,22 +1,53 @@
 {
-  "name": "layout",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+  "name": "@uiid/layout",
+  "description": "react layout components",
+  "version": "0.0.0-alpha.2",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uiid-systems/layout"
   },
-  "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.1.6"
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "build": "tsup",
+    "release": "pnpm run build && pnpm publish"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19"
+    "@types/node": "22.10.5",
+    "@types/react": "^19.0.8",
+    "add": "^2.0.6",
+    "pnpm": "^9.15.4",
+    "ts-node": "10.9.2",
+    "tsconfig-paths": "4.2.0",
+    "tsup": "8.3.5",
+    "typescript": "5.7.2"
+  },
+  "pnpm": {
+    "overrides": {
+      "micromatch@<4.0.8": ">=4.0.8"
+    }
+  },
+  "packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0",
+  "dependencies": {
+    "@uiid/core": "0.0.0-alpha.2",
+    "cva": "1.0.0-beta.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwind-merge": "^3.0.1"
   }
 }
