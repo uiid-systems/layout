@@ -1,0 +1,33 @@
+@layer uiid {
+  [data-uiid="group"] {
+    display: flex;
+  }
+
+  [data-uiid="stack"] {
+    display: flex;
+    flex-direction: column;
+  }
+
+  [data-uiid="layer"] {
+    display: grid;
+    & > * {
+      grid-area: 1 / 1;
+    }
+  }
+
+  [data-evenly] > * {
+    flex: 1;
+  }
+
+  [data-fullwidth] {
+    width: 100%;
+  }
+
+  [data-inline] {
+    display: inline-flex;
+  }
+
+  [data-wrap] {
+    flex-wrap: wrap;
+  }
+}

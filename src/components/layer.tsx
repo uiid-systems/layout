@@ -1,22 +1,15 @@
+import { cx } from "@uiid/core";
+
 import { useId, Children } from "react";
 
-import { cva, cx, type VariantProps } from "@uiid/core";
-
 import { Box, type BoxProps } from "./box";
-
-export const layerStyles = cva({
-  base: ["grid", "*:col-[1/1]", "*:row-[1/1]"],
-  variants: {},
-  defaultVariants: {},
-});
 
 export type LayerProps = {
   offset?: {
     x?: number;
     y?: number;
   };
-} & Omit<BoxProps, "gap"> &
-  VariantProps<typeof layerStyles>;
+} & Omit<BoxProps, "gap">;
 
 export const Layer = ({
   offset,
@@ -52,7 +45,7 @@ export const Layer = ({
     <Box
       data-uiid="layer"
       data-layer-id={offset ? id : undefined}
-      className={cx(layerStyles({ className }), {
+      className={cx(className, {
         "*:translate-x-[calc(var(--offsetX)*var(--mult)*1px)]": offset?.x,
         "*:translate-y-[calc(var(--offsetY)*var(--mult)*1px)]": offset?.y,
       })}

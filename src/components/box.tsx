@@ -1,16 +1,9 @@
 import { isValidElement, cloneElement } from "react";
 
-import { cva, cx, VariantProps } from "@uiid/core";
+import { cx } from "@uiid/core";
 
 import { responsiveStyles, type ResponsiveProps } from "../responsive-props";
-
-export const boxStyles = cva({
-  base: "",
-  variants: {
-    fullwidth: { true: "w-full" },
-  },
-  defaultVariants: {},
-});
+import type { VariantProps } from "../types";
 
 type Render = React.ReactElement<
   React.PropsWithChildren<{ className?: string }>
@@ -21,12 +14,15 @@ export type BoxProps = React.PropsWithChildren<{
   ref?: React.Ref<any>;
 }> &
   React.HTMLAttributes<HTMLElement> &
-  VariantProps<typeof boxStyles> &
-  ResponsiveProps;
+  ResponsiveProps &
+  VariantProps;
 
 export const Box = ({
   /** variants */
   fullwidth,
+  evenly,
+  inline,
+  wrap,
   /** responsive-props */
   ax,
   ay,
@@ -49,7 +45,7 @@ export const Box = ({
   ...props
 }: BoxProps) => {
   const boxClassName = cx(
-    boxStyles({ fullwidth, className }),
+    className,
     responsiveStyles({
       ax,
       ay,
@@ -84,7 +80,16 @@ export const Box = ({
   }
 
   return (
-    <div data-uiid="box" ref={ref} className={boxClassName} {...props}>
+    <div
+      data-uiid="box"
+      data-fullwidth={fullwidth}
+      data-evenly={evenly}
+      data-inline={inline}
+      data-wrap={wrap}
+      ref={ref}
+      className={boxClassName}
+      {...props}
+    >
       {children}
     </div>
   );
