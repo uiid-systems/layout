@@ -5,7 +5,7 @@ import { Stack } from "../components/stack";
 const meta = {
   title: "Layout/Stack",
   component: Stack,
-  args: {},
+  args: { gap: 1 },
   render: (args) => (
     <Stack {...args}>
       <div className="bg-[tomato] size-16" />

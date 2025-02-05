@@ -5,7 +5,7 @@ import { Group } from "../components/group";
 const meta = {
   title: "Layout/Group",
   component: Group,
-  args: {},
+  args: { gap: 1 },
   render: (args) => (
     <Group {...args}>
       <div className="bg-[tomato] size-16" />

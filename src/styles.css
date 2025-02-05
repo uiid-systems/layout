@@ -1,5 +1,8 @@
-/* prettier-ignore-file */
 @layer uiid {
+  :root {
+    --spacing: 0.25rem;
+  }
+
   [data-uiid="group"] {
     display: flex;
   }

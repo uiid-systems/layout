@@ -1,35 +1,28 @@
+import { cx, styleProps, type StyleProps } from "@uiid/core";
 import { isValidElement, cloneElement } from "react";
 
-import { cx } from "@uiid/core";
-
+import * as properties from "../properties";
 import type { RenderProp, VariantProps } from "../types";
-import { mapStyleProps, type StyleProps } from "../utils/mapStyleProps";
 
-export type BoxProps = React.PropsWithChildren<{
+export type BoxProps = {
   render?: (() => RenderProp) | RenderProp;
-  ref?: React.Ref<any>;
-}> &
-  React.HTMLAttributes<HTMLElement> &
+} & React.HTMLAttributes<HTMLElement> &
+  React.PropsWithChildren &
   VariantProps &
-  StyleProps;
+  StyleProps<typeof properties>;
 
 export const Box = ({
-  /** variants */
   centered,
   evenly,
   fullwidth,
   hide,
   inline,
   wrap,
-  /** composition */
   render,
-  /** other */
   children,
-  ref,
   ...props
 }: BoxProps) => {
-  const styles = mapStyleProps(props);
-
+  const styles = { ...props.style, ...styleProps(props, properties) };
   const element = typeof render === "function" ? render() : render;
 
   if (isValidElement(element)) {
@@ -42,7 +35,7 @@ export const Box = ({
   }
 
   return (
-    <div data-uiid="box" style={{ ...props.style, ...styles }} {...props}>
+    <div style={styles} {...props}>
       {children}
     </div>
   );

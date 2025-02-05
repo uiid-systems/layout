@@ -1,4 +1,4 @@
-import type { StyleProp } from "../types";
+import type { StyleProp } from "@uiid/core";
 
 export const ax = {
   property: "justifyContent",
