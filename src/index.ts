@@ -5,3 +5,5 @@ export * from "./components/stack";
 export * from "./components/wrapper-conditional";
 export * from "./components/wrapper-slots";
 export * from "./components/wrapper-switch";
+
+export * from "./types";

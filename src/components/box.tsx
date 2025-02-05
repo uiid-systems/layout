@@ -8,8 +8,8 @@ export type BoxProps = {
   render?: (() => RenderProp) | RenderProp;
 } & React.HTMLAttributes<HTMLElement> &
   React.PropsWithChildren &
-  VariantProps &
-  StyleProps<typeof properties>;
+  StyleProps<typeof properties> &
+  VariantProps;
 
 export const Box = ({
   centered,

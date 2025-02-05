@@ -3,20 +3,6 @@
   "description": "react layout components",
   "version": "0.0.0-alpha.8",
   "private": false,
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/uiid-systems/layout"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
-  "scripts": {
-    "build": "tsup",
-    "release": "pnpm run build && pnpm publish",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
-  },
   "exports": {
     "./styles.css": "./dist/styles.css",
     ".": {
@@ -27,16 +13,18 @@
   "files": [
     "dist"
   ],
-  "engines": {
-    "node": ">=18.0.0"
+  "scripts": {
+    "build": "tsup",
+    "release": "pnpm run build && pnpm publish",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@uiid/core": "latest"
   },
   "peerDependencies": {
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "tailwindcss": "^4.0.3"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^8.5.3",
@@ -50,10 +38,22 @@
     "add": "^2.0.6",
     "pnpm": "^9.15.5",
     "storybook": "^8.5.3",
+    "tailwindcss": "^4.0.3",
     "ts-node": "10.9.2",
     "tsconfig-paths": "4.2.0",
     "tsup": "8.3.5",
     "typescript": "5.7.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uiid-systems/layout"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "pnpm": {
     "overrides": {
