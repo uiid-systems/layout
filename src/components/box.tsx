@@ -1,16 +1,12 @@
-import { isValidElement, cloneElement, useId } from "react";
+import { isValidElement, cloneElement } from "react";
 
 import { cx } from "@uiid/core";
 
-import { responsiveProps, type StyleProps } from "../responsive-props";
-import type { VariantProps } from "../types";
-
-type Render = React.ReactElement<
-  React.PropsWithChildren<{ className?: string; "data-uiid-unique": string }>
->;
+import type { RenderProp, VariantProps } from "../types";
+import { mapStyleProps, type StyleProps } from "../utils/mapStyleProps";
 
 export type BoxProps = React.PropsWithChildren<{
-  render?: (() => Render) | Render;
+  render?: (() => RenderProp) | RenderProp;
   ref?: React.Ref<any>;
 }> &
   React.HTMLAttributes<HTMLElement> &
@@ -25,10 +21,6 @@ export const Box = ({
   hide,
   inline,
   wrap,
-  /** styles */
-  ax,
-  ay,
-  direction,
   /** composition */
   render,
   /** other */
@@ -36,68 +28,21 @@ export const Box = ({
   ref,
   ...props
 }: BoxProps) => {
-  const unique = useId();
+  const styles = mapStyleProps(props);
 
-  const responsiveProps2 = { ax, ay, direction };
-  const hasResponsiveProps = !!Object.values(responsiveProps2).join("");
+  const element = typeof render === "function" ? render() : render;
 
-  const ids = {
-    "data-uiid": "box",
-    "data-uiid-unique": unique,
-  };
-
-  const common = {
-    ...ids,
-    "data-centered": centered,
-    "data-evenly": evenly,
-    "data-fullwidth": fullwidth,
-    "data-hide": hide,
-    "data-inline": inline,
-    "data-wrap": wrap,
-    ...props,
-  };
-
-  const style = hasResponsiveProps && (
-    <style
-      dangerouslySetInnerHTML={{
-        __html: responsiveProps({
-          props: { ax, ay, direction },
-          selector: `[data-uiid-unique="${unique}"]`,
-        }),
-      }}
-    />
-  );
-
-  if (typeof render === "function") {
-    const rendered = render();
-    return cloneElement(rendered, {
-      ...common,
-      children: (
-        <>
-          {responsiveProps2 && style}
-          {children || rendered.props.children}
-        </>
-      ),
-      className: cx(props.className, rendered.props.className),
-    });
-  }
-
-  if (isValidElement(render)) {
-    return cloneElement(render, {
-      ...common,
-      children: (
-        <>
-          {style}
-          {children || render.props.children}
-        </>
-      ),
-      className: cx(props.className, render.props.className),
+  if (isValidElement(element)) {
+    return cloneElement(element, {
+      ...props,
+      children: children ?? element.props.children,
+      className: cx(props.className, element.props.className),
+      style: { ...props.style, ...styles },
     });
   }
 
   return (
-    <div {...common}>
-      {style}
+    <div data-uiid="box" style={{ ...props.style, ...styles }} {...props}>
       {children}
     </div>
   );

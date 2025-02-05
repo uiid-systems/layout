@@ -1,5 +1,7 @@
+import type { StyleProp } from "../types";
+
 export const ax = {
-  property: "justify-content",
+  property: "justifyContent",
   values: [
     "around",
     "baseline",
@@ -11,9 +13,9 @@ export const ax = {
     "start",
     "stretch",
   ] as const,
-};
+} satisfies StyleProp;
 
 export const ay = {
-  property: "align-items",
+  property: "alignItems",
   values: ["baseline", "center", "end", "start", "stretch"] as const,
-};
+} satisfies StyleProp;

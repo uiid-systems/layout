@@ -5,6 +5,17 @@ import { Box } from "../components/box";
 const meta = {
   title: "Primitives/Box",
   component: Box,
+  args: {
+    centered: true,
+    fullwidth: true,
+    evenly: true,
+    inline: true,
+    hide: true,
+    ax: "between",
+    ay: "baseline",
+    direction: "row",
+    visibility: "hidden",
+  },
   render: (args) => <Box {...args} className="bg-[gold] size-16" />,
 } satisfies Meta<typeof Box>;
 

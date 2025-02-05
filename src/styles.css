@@ -1,13 +1,12 @@
+/* prettier-ignore-file */
 @layer uiid {
   [data-uiid="group"] {
     display: flex;
   }
-
   [data-uiid="stack"] {
     display: flex;
     flex-direction: column;
   }
-
   [data-uiid="layer"] {
     display: grid;
     & > * {
@@ -15,28 +14,23 @@
     }
   }
 
-  [data-evenly="true"] > * {
+  .evenly > * {
     flex: 1;
   }
-
-  [data-fullwidth="true"] {
+  .fullwidth {
     width: 100%;
   }
-
-  [data-inline="true"] {
+  .inline {
     display: inline-flex;
   }
-
-  [data-wrap="true"] {
+  .wrap {
     flex-wrap: wrap;
   }
-
-  [data-centered="true"] {
+  .centered {
     align-items: center;
     justify-content: center;
   }
-
-  [data-hide="true"] {
+  .hide {
     display: "none";
   }
 }
