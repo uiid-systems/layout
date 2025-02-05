@@ -1,7 +1,11 @@
 ```tsx
-import { cva, cx, compose, type VariantProps } from "@uiid/core";
-```
-
-```tsx
-import "@uiid/core/globals.css";
+import {
+  Box,
+  Group,
+  Layer,
+  Stack,
+  WrapperConditional,
+  WrapperSlots,
+  WrapperSwitch,
+} from "@uiid/layout";
 ```
