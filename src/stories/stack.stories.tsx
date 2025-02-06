@@ -25,7 +25,7 @@ export const Default: Story = {
 export const Evenly: Story = {
   args: {
     evenly: true,
-    className: "h-[calc(100dvh-2rem)]",
+    fullscreen: true,
   },
 };
 

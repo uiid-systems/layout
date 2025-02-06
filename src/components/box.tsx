@@ -1,4 +1,4 @@
-import { cx, styleProps, type StyleProps } from "@uiid/core";
+import { cx, booleanProps, styleProps, type StyleProps } from "@uiid/core";
 import { isValidElement, cloneElement } from "react";
 
 import * as properties from "../properties";
@@ -12,30 +12,43 @@ export type BoxProps = {
   VariantProps;
 
 export const Box = ({
-  centered,
+  center,
   evenly,
+  fullheight,
+  fullscreen,
   fullwidth,
   hide,
   inline,
   wrap,
   render,
+  className,
   children,
   ...props
 }: BoxProps) => {
-  const styles = { ...props.style, ...styleProps(props, properties) };
   const element = typeof render === "function" ? render() : render;
+  const styles = { ...props.style, ...styleProps(props, properties) };
+  const variants = booleanProps({
+    center,
+    evenly,
+    fullheight,
+    fullscreen,
+    fullwidth,
+    hide,
+    inline,
+    wrap,
+  });
 
   if (isValidElement(element)) {
     return cloneElement(element, {
       ...props,
       children: children ?? element.props.children,
-      className: cx(props.className, element.props.className),
+      className: cx(variants, className, element.props.className),
       style: { ...props.style, ...styles },
     });
   }
 
   return (
-    <div style={styles} {...props}>
+    <div className={cx(variants, className)} style={styles} {...props}>
       {children}
     </div>
   );

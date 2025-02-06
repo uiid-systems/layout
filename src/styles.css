@@ -20,8 +20,13 @@
   .evenly > * {
     flex: 1;
   }
+  .fullheight {
+    height: 100%;
+    overflow-y: none;
+  }
   .fullwidth {
     width: 100%;
+    overflow-x: none;
   }
   .inline {
     display: inline-flex;
@@ -29,11 +34,17 @@
   .wrap {
     flex-wrap: wrap;
   }
-  .centered {
+  .center {
+    display: flex;
     align-items: center;
     justify-content: center;
   }
   .hide {
-    display: "none";
+    display: none;
+  }
+
+  .fullscreen {
+    width: 100dvh;
+    height: 100dvh;
   }
 }
