@@ -1,8 +1,10 @@
 @layer uiid {
+  /** variables */
   :root {
     --spacing: 0.25rem;
   }
 
+  /** components */
   [data-uiid="group"] {
     display: flex;
   }
@@ -17,12 +19,25 @@
     }
   }
 
+  /** variants */
+  .center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .evenly > * {
     flex: 1;
   }
   .fullheight {
     height: 100%;
     overflow-y: none;
+  }
+  .fullscreen {
+    margin: 0;
+    padding: 0;
+    width: 100dvh;
+    height: 100dvh;
+    overflow: hidden;
   }
   .fullwidth {
     width: 100%;
@@ -31,20 +46,10 @@
   .inline {
     display: inline-flex;
   }
-  .wrap {
-    flex-wrap: wrap;
-  }
-  .center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
   .hide {
     display: none;
   }
-
-  .fullscreen {
-    width: 100dvh;
-    height: 100dvh;
+  .wrap {
+    flex-wrap: wrap;
   }
 }
