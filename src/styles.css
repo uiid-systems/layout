@@ -1,55 +1,5 @@
 @layer uiid {
-  /** variables */
-  :root {
-    --spacing: 0.25rem;
-  }
-
-  /** components */
-  [data-uiid="group"] {
-    display: flex;
-  }
-  [data-uiid="stack"] {
-    display: flex;
-    flex-direction: column;
-  }
-  [data-uiid="layer"] {
-    display: grid;
-    & > * {
-      grid-area: 1 / 1;
-    }
-  }
-
-  /** variants */
-  .center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .evenly > * {
-    flex: 1;
-  }
-  .fullheight {
-    height: 100%;
-    overflow-y: none;
-  }
-  .fullscreen {
-    margin: 0;
-    padding: 0;
-    width: 100dvh;
-    height: 100dvh;
-    overflow: hidden;
-  }
-  .fullwidth {
-    width: 100%;
-    overflow-x: none;
-  }
-  .inline {
-    display: inline-flex;
-  }
-  .hide {
-    display: none;
-  }
-  .wrap {
-    flex-wrap: wrap;
-  }
+  @import "./styles/variables.css";
+  @import "./styles/components.css";
+  @import "./styles/variants.css";
 }

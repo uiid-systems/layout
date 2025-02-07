@@ -1,0 +1,15 @@
+[data-uiid="group"] {
+  display: flex;
+}
+
+[data-uiid="stack"] {
+  display: flex;
+  flex-direction: column;
+}
+
+[data-uiid="layer"] {
+  display: grid;
+  & > * {
+    grid-area: 1 / 1;
+  }
+}

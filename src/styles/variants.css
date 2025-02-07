@@ -1,0 +1,39 @@
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.evenly > * {
+  flex: 1;
+}
+
+.fullheight {
+  height: 100%;
+  overflow-y: none;
+}
+
+.fullscreen {
+  margin: 0;
+  padding: 0;
+  width: 100dvh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.fullwidth {
+  width: 100%;
+  overflow-x: none;
+}
+
+.inline {
+  display: inline-flex;
+}
+
+.hide {
+  display: none;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
