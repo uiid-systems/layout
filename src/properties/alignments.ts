@@ -19,3 +19,8 @@ export const ay = {
   property: "alignItems",
   values: ["baseline", "center", "end", "start", "stretch"] as const,
 } satisfies StyleProp;
+
+export const ta = {
+  property: "textAlign",
+  values: ["left", "right", "center", "justify", "initial", "inherit"] as const,
+} satisfies StyleProp;
