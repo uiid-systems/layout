@@ -26,12 +26,23 @@
   overflow-x: none;
 }
 
+.hide {
+  display: none;
+}
+
 .inline {
   display: inline-flex;
 }
 
-.hide {
-  display: none;
+.interactive {
+  cursor: pointer;
+  transition: scale var(--scale-duration) ease;
+  &:hover {
+    scale: var(--scale-hover);
+  }
+  &:active {
+    scale: var(--scale-active);
+  }
 }
 
 .wrap {

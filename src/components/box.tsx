@@ -22,11 +22,12 @@ export const Box = ({
   wrap,
   render,
   className,
+  style,
   children,
   ...props
 }: BoxProps) => {
   const element = typeof render === "function" ? render() : render;
-  const styles = { ...props.style, ...styleProps(props, properties) };
+  const styles = { ...styleProps(props, properties), ...style };
   const variants = booleanProps({
     center,
     evenly,
@@ -43,7 +44,7 @@ export const Box = ({
       ...props,
       children: children ?? element.props.children,
       className: cx(variants, className, element.props.className),
-      style: { ...props.style, ...styles },
+      style: styles,
     });
   }
 

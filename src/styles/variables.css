@@ -1,3 +1,6 @@
 :root {
   --spacing: 0.25rem;
+  --scale-hover: 1.05;
+  --scale-active: 0.95;
+  --scale-duration: 150ms;
 }
