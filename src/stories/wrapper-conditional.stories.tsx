@@ -7,7 +7,7 @@ const meta = {
   component: WrapperConditional,
   args: {
     condition: true,
-    wrapper: <div className="bg-[gold] size-16" />,
+    wrapper: <div style={{ background: "gold", height: 64, width: 64 }} />,
   },
   argTypes: {
     condition: { type: "boolean" },

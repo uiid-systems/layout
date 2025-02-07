@@ -8,8 +8,10 @@ const meta = {
   args: {
     condition: true,
     wrappers: {
-      true: <div className="bg-[mediumseagreen] size-16" />,
-      false: <div className="bg-[tomato] size-16" />,
+      true: (
+        <div style={{ background: "mediumseagreen", height: 64, width: 64 }} />
+      ),
+      false: <div style={{ background: "tomato", height: 64, width: 64 }} />,
     },
   },
   argTypes: {

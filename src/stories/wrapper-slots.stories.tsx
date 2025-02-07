@@ -6,12 +6,14 @@ const meta = {
   title: "Wrappers/Slots",
   component: WrapperSlots,
   args: {
-    before: <div className="bg-[tomato] size-16" />,
-    after: <div className="bg-[mediumseagreen] size-16" />,
+    before: <div style={{ background: "tomato", height: 64, width: 64 }} />,
+    after: (
+      <div style={{ background: "mediumseagreen", height: 64, width: 64 }} />
+    ),
   },
   render: (args) => (
     <WrapperSlots {...args}>
-      <div className="bg-[gold] size-16" />
+      <div style={{ background: "gold", height: 64, width: 64 }} />
     </WrapperSlots>
   ),
 } satisfies Meta<typeof WrapperSlots>;

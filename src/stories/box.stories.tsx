@@ -5,7 +5,9 @@ import { Box } from "../components/box";
 const meta = {
   title: "Primitives/Box",
   component: Box,
-  render: (args) => <Box {...args} className="bg-[gold] size-16" />,
+  render: (args) => (
+    <Box {...args} style={{ background: "gold", height: 64, width: 64 }} />
+  ),
 } satisfies Meta<typeof Box>;
 
 export default meta;
@@ -16,7 +18,7 @@ export const Default: Story = { name: "Box" };
 export const Centered: Story = {
   render: () => (
     <Box fullscreen center>
-      <Box className="bg-[gold] size-16" />
+      <Box style={{ background: "gold", height: 64, width: 64 }} />
     </Box>
   ),
 };

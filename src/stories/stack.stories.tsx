@@ -8,9 +8,9 @@ const meta = {
   args: { gap: 1 },
   render: (args) => (
     <Stack {...args}>
-      <div className="bg-[tomato] size-16" />
-      <div className="bg-[gold] size-16" />
-      <div className="bg-[mediumseagreen] size-16" />
+      <div style={{ background: "tomato", height: 64, width: 64 }} />
+      <div style={{ background: "gold", height: 64, width: 64 }} />
+      <div style={{ background: "mediumseagreen", height: 64, width: 64 }} />
     </Stack>
   ),
 } satisfies Meta<typeof Stack>;
@@ -33,6 +33,6 @@ export const Wrap: Story = {
   args: {
     inline: true,
     wrap: true,
-    className: "max-h-40",
+    style: { maxHeight: 144 },
   },
 };

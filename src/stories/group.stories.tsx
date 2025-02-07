@@ -8,9 +8,9 @@ const meta = {
   args: { gap: 1 },
   render: (args) => (
     <Group {...args}>
-      <div className="bg-[tomato] size-16" />
-      <div className="bg-[gold] size-16" />
-      <div className="bg-[mediumseagreen] size-16" />
+      <div style={{ background: "tomato", height: 64, width: 64 }} />
+      <div style={{ background: "gold", height: 64, width: 64 }} />
+      <div style={{ background: "mediumseagreen", height: 64, width: 64 }} />
     </Group>
   ),
 } satisfies Meta<typeof Group>;
@@ -25,5 +25,5 @@ export const Evenly: Story = {
 };
 
 export const Wrap: Story = {
-  args: { wrap: true, className: "max-w-40" },
+  args: { wrap: true, style: { maxWidth: 144 } },
 };

@@ -8,9 +8,9 @@ const meta = {
   args: {},
   render: (args) => (
     <Layer {...args}>
-      <div className="bg-[tomato] size-16" />
-      <div className="bg-[gold] size-16" />
-      <div className="bg-[mediumseagreen] size-16" />
+      <div style={{ background: "tomato", height: 64, width: 64 }} />
+      <div style={{ background: "gold", height: 64, width: 64 }} />
+      <div style={{ background: "mediumseagreen", height: 64, width: 64 }} />
     </Layer>
   ),
 } satisfies Meta<typeof Layer>;
