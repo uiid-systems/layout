@@ -6,7 +6,7 @@ export type StackProps = {
 } & BoxProps;
 
 export const Stack = ({ ax, ay, ...props }: StackProps) => (
-  <Box data-uiid="stack" ax={ay} ay={ax} {...props} />
+  <Box data-uiid-layout="stack" ax={ay} ay={ax} {...props} />
 );
 
 Stack.displayName = "Stack";

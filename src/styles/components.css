@@ -1,19 +1,19 @@
-[data-uiid="group"] {
+[data-uiid-layout="group"] {
   display: flex;
 }
 
-[data-uiid="stack"] {
+[data-uiid-layout="stack"] {
   display: flex;
   flex-direction: column;
 }
 
-[data-uiid="layer"] {
+[data-uiid-layout="layer"] {
   display: grid;
   & > * {
     grid-area: 1 / 1;
   }
 }
 
-[data-uiid="card"] {
+[data-uiid-layout="card"] {
   border-radius: var(--card-radius);
 }

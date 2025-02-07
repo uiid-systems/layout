@@ -16,6 +16,10 @@ export const Card = ({
   const variants = booleanProps({ interactive, rounded });
 
   return (
-    <Box data-uiid="card" className={cx(className, variants)} {...props} />
+    <Box
+      data-uiid-layout="card"
+      className={cx(className, variants)}
+      {...props}
+    />
   );
 };

@@ -53,7 +53,12 @@ export const Box = ({
   }
 
   return (
-    <div className={cx(variants, className)} style={styles} {...props}>
+    <div
+      data-uiid-layout="box"
+      className={cx(variants, className)}
+      style={styles}
+      {...props}
+    >
       {children}
     </div>
   );
