@@ -21,6 +21,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {};
 
 export const Evenly: Story = {
+  parameters: { layout: "fullscreen" },
   args: { evenly: true },
 };
 

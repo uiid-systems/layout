@@ -13,3 +13,7 @@
     grid-area: 1 / 1;
   }
 }
+
+[data-uiid="card"] {
+  border-radius: var(--card-radius);
+}

@@ -13,11 +13,13 @@ export type BoxProps = {
 
 export const Box = ({
   center,
+  disabled,
   evenly,
   fullheight,
   fullscreen,
   fullwidth,
   hide,
+  inactive,
   inline,
   wrap,
   render,
@@ -30,11 +32,13 @@ export const Box = ({
   const styles = { ...styleProps(props, properties), ...style };
   const variants = booleanProps({
     center,
+    disabled,
     evenly,
     fullheight,
     fullscreen,
     fullwidth,
     hide,
+    inactive,
     inline,
     wrap,
   });

@@ -4,11 +4,13 @@ export type RenderProp = React.ReactElement<
 
 export type VariantProps = {
   center?: boolean;
+  disabled?: boolean;
   evenly?: boolean;
   fullheight?: boolean;
   fullscreen?: boolean;
   fullwidth?: boolean;
   hide?: boolean;
+  inactive?: boolean;
   inline?: boolean;
   wrap?: boolean;
 };

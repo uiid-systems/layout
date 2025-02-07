@@ -13,16 +13,19 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = { name: "Box" };
-
-export const Centered: Story = {
-  render: () => (
-    <Box fullscreen center>
-      <Box style={{ background: "gold", height: 64, width: 64 }} />
-    </Box>
-  ),
-};
+export const Default: Story = {};
 
 export const Hide: Story = {
   args: { hide: true },
+};
+
+export const Inactive: Story = {
+  args: { inactive: true },
+};
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+    onClick: () => alert("test"),
+  },
 };

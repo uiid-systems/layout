@@ -4,6 +4,10 @@
   justify-content: center;
 }
 
+.disabled {
+  pointer-events: none;
+}
+
 .evenly > * {
   flex: 1;
 }
@@ -28,6 +32,10 @@
 
 .hide {
   display: none;
+}
+
+.inactive {
+  opacity: var(--inactive-opacity);
 }
 
 .inline {
