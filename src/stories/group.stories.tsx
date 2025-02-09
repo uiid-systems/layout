@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Group } from "../components/group";
 
 const meta = {
-  title: "Layout/Group",
+  title: "Position/Group",
   component: Group,
   args: { gap: 1 },
   render: (args) => (
