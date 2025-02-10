@@ -1,7 +1,7 @@
 {
   "name": "@uiid/layout",
   "description": "react layout components",
-  "version": "0.0.0-alpha.9",
+  "version": "0.0.0-alpha.10",
   "private": false,
   "exports": {
     "./styles.css": "./dist/styles.css",
@@ -11,12 +11,13 @@
     }
   },
   "files": [
+    "src",
     "dist"
   ],
   "scripts": {
     "build": "tsup",
     "test": "vitest",
-    "release": "pnpm run build && pnpm publish",
+    "release": "pnpm build && pnpm publish",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
