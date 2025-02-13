@@ -9,7 +9,7 @@ export type VariantProps = {
   fullheight?: boolean;
   fullscreen?: boolean;
   fullwidth?: boolean;
-  hide?: boolean;
+  hidden?: boolean;
   inactive?: boolean;
   inline?: boolean;
   wrap?: boolean;

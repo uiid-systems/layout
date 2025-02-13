@@ -15,6 +15,6 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {};
 
-export const Hide: Story = {
-  args: { hide: true },
+export const Hidden: Story = {
+  args: { hidden: true },
 };

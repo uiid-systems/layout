@@ -33,7 +33,7 @@
     overflow-x: none;
   }
 
-  &.hide {
+  &.hidden {
     display: none;
   }
 
