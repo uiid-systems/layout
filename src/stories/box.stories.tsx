@@ -18,14 +18,3 @@ export const Default: Story = {};
 export const Hide: Story = {
   args: { hide: true },
 };
-
-export const Inactive: Story = {
-  args: { inactive: true },
-};
-
-export const Disabled: Story = {
-  args: {
-    disabled: true,
-    onClick: () => alert("test"),
-  },
-};
