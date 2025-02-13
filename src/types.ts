@@ -1,7 +1,3 @@
-export type RenderProp = React.ReactElement<
-  React.PropsWithChildren<{ className?: string; style?: React.CSSProperties }>
->;
-
 export type VariantProps = {
   center?: boolean;
   disabled?: boolean;
