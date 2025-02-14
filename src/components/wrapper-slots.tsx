@@ -1,7 +1,5 @@
 import { cloneElement } from "react";
 
-import { cx } from "@uiid/core";
-
 import { Box, type BoxProps } from "./box";
 
 type Slot = React.ReactElement<any>;
@@ -14,6 +12,7 @@ export type WrapperSlotsProps = {
 export const WrapperSlots = ({
   before,
   after,
+  direction,
   className,
   children,
   ...props
@@ -27,7 +26,12 @@ export const WrapperSlots = ({
     after && cloneElement(after, undefined, after.props.children);
 
   return (
-    <Box className={cx("inline-flex", className)} {...props}>
+    <Box
+      display="inline-flex"
+      direction={direction}
+      className={className}
+      {...props}
+    >
       {beforeElement}
       {children}
       {afterElement}

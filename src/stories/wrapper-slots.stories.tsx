@@ -6,6 +6,7 @@ const meta = {
   title: "Wrappers/Slots",
   component: WrapperSlots,
   args: {
+    direction: "row",
     before: <div style={{ background: "tomato", height: 64, width: 64 }} />,
     after: (
       <div style={{ background: "mediumseagreen", height: 64, width: 64 }} />

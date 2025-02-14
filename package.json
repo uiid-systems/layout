@@ -2,7 +2,6 @@
   "name": "@uiid/layout",
   "description": "react layout components",
   "version": "0.0.0-alpha.10",
-  "private": false,
   "exports": {
     "./styles.css": "./dist/styles.css",
     ".": {
@@ -55,6 +54,11 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/uiid-systems/layout"
+  },
+  "author": {
+    "name": "Adam Fratino",
+    "email": "hello@fratino.dev",
+    "url": "http://fratino.dev/"
   },
   "publishConfig": {
     "access": "public",
