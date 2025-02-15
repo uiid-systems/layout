@@ -14,15 +14,12 @@ export const WrapperDisabled = ({
   return (
     <WrapperConditional
       aria-disabled={disabled}
+      data-disabled={disabled}
       condition={disabled}
-      wrapper={<div style={wrapperStyles} />}
+      wrapper={<div style={{ cursor: "not-allowed" }} />}
     >
       {children}
     </WrapperConditional>
   );
 };
 WrapperDisabled.displayName = "WrapperDisabled";
-
-const wrapperStyles = {
-  cursor: "not-allowed",
-} satisfies React.CSSProperties;
