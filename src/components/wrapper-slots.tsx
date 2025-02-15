@@ -1,3 +1,4 @@
+import { cx } from "@uiid/core";
 import { cloneElement } from "react";
 
 import { Box, type BoxProps } from "./box";
@@ -29,8 +30,7 @@ export const WrapperSlots = ({
   return (
     <Box
       direction={direction}
-      className={className}
-      style={{ display: "inline-flex", ...style }}
+      className={cx("inline-flex", className)}
       {...props}
     >
       {beforeElement}
