@@ -1,19 +1,20 @@
 import { cloneElement } from "react";
 
-export interface WrapperConditionalProps {
+export type ConditionalProps = {
   condition: boolean;
   wrapper: React.ReactElement<any>;
   children?: React.ReactNode;
-}
+};
 
-export function WrapperConditional({
+export function Conditional({
   condition,
   wrapper,
   children,
-}: WrapperConditionalProps) {
+}: ConditionalProps) {
   if (!condition || !wrapper) return <>{children}</>;
 
   const contentToRender = children ?? wrapper.props.children;
 
   return cloneElement(wrapper, undefined, contentToRender);
 }
+Conditional.displayName = "Conditional";

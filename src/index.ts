@@ -1,10 +1,16 @@
+/** primitives */
 export * from "./components/box";
+
+/** wrappers */
+export * from "./components/conditional";
+export * from "./components/disabled";
+export * from "./components/slots";
+export * from "./components/switch";
+
+/** positional */
 export * from "./components/group";
 export * from "./components/layer";
 export * from "./components/stack";
-export * from "./components/wrapper-conditional";
-export * from "./components/wrapper-disabled";
-export * from "./components/wrapper-slots";
-export * from "./components/wrapper-switch";
 
-export * from "./types";
+/** types */
+export type * from "./types";

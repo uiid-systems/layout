@@ -1,4 +1,4 @@
-const BOOLEAN_PROPS = [
+export const BOOLEAN_PROPS = [
   "center",
   "disabled",
   "evenly",
@@ -10,7 +10,3 @@ const BOOLEAN_PROPS = [
   "inline",
   "wrap",
 ] as const;
-
-export type LayoutBooleanProps = {
-  [K in (typeof BOOLEAN_PROPS)[number]]?: boolean;
-};

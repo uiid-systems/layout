@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, test, expect } from "vitest";
 
-import { WrapperSlots } from "../components/wrapper-slots";
+import { Slots } from "../components/slots";
 
 const before_text = "before";
 const after_text = "after";
@@ -10,13 +10,11 @@ const children_text = "children";
 describe(`wrapper-slots`, () => {
   test("accepts children", () => {
     render(
-      <WrapperSlots
-        before={<h1>{before_text}</h1>}
-        after={<h2>{after_text}</h2>}
-      >
+      <Slots before={<h1>{before_text}</h1>} after={<h2>{after_text}</h2>}>
         {children_text}
-      </WrapperSlots>
+      </Slots>
     );
+
     const before = screen.getByText(before_text);
     const after = screen.getByText(after_text);
     const children = screen.getByText(children_text);

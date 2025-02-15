@@ -14,19 +14,18 @@ describe(`box`, () => {
 
   test("supports render prop", () => {
     render(
-      <>
-        <Box render={<h1 />} />
-        <Box render={() => <h2>{text}</h2>} />
-      </>
+      <Box
+        render={<h1>{text}</h1>}
+        className="hidden"
+        style={{ display: "block" }}
+      />
     );
 
     const h1 = screen.getByRole("heading", { level: 1 });
-    const h2 = screen.getByRole("heading", { level: 2 });
-    const lorem = screen.getByText(text);
-
     expect(h1).toBeInTheDocument();
-    expect(h2).toBeInTheDocument();
-    expect(lorem).toBeInTheDocument();
+    expect(h1).toHaveClass("hidden");
+    expect(h1).toHaveStyle("display: block;");
+    expect(h1).toHaveTextContent(text);
   });
 
   test("supports style props", () => {
@@ -35,10 +34,6 @@ describe(`box`, () => {
     expect(text).toHaveStyle("visibility: hidden");
   });
 
-  // test("supports ref", () => {
-  //   const ref = createRef();
-  //   render(<Box data-testid="box" ref={ref} />);
-  //   const element = screen.getByTestId("box");
-  //   expect(ref.current).toBe(element);
-  // });
+  // test ref
+  // test boolean props
 });

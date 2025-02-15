@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { describe, test, expect } from "vitest";
 
-import { WrapperSwitch } from "../components/wrapper-switch";
+import { Switch } from "../components/switch";
 
 const true_text = "true";
 const false_text = "false";
@@ -9,12 +9,9 @@ const false_text = "false";
 describe(`wrapper-switch`, () => {
   test("accepts children", () => {
     render(
-      <WrapperSwitch
-        condition={true}
-        wrappers={{ true: <h1 />, false: <h2 /> }}
-      >
+      <Switch condition={true} wrappers={{ true: <h1 />, false: <h2 /> }}>
         {true_text}
-      </WrapperSwitch>
+      </Switch>
     );
     const lorem = screen.getByText(true_text);
     const h1 = screen.getByRole("heading", { level: 1 });
@@ -25,7 +22,7 @@ describe(`wrapper-switch`, () => {
 
   test("accepts wrapper children", () => {
     render(
-      <WrapperSwitch
+      <Switch
         condition={true}
         wrappers={{ true: <h1>{true_text}</h1>, false: <h2 /> }}
       />
@@ -43,7 +40,7 @@ describe(`wrapper-switch`, () => {
 
   test("renders false wrapper", () => {
     render(
-      <WrapperSwitch
+      <Switch
         condition={false}
         wrappers={{ true: <h1>{true_text}</h1>, false: <h2>{false_text}</h2> }}
       />

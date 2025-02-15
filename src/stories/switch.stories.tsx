@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { WrapperSwitch } from "../components/wrapper-switch";
+import { Switch } from "../components/switch";
 
 const meta = {
   title: "Wrappers/Switch",
-  component: WrapperSwitch,
+  component: Switch,
   args: {
     condition: true,
     wrappers: {
@@ -19,8 +19,8 @@ const meta = {
     children: { table: { disable: true } },
     wrappers: { table: { disable: true } },
   },
-  render: (args) => <WrapperSwitch {...args} />,
-} satisfies Meta<typeof WrapperSwitch>;
+  render: (args) => <Switch {...args} />,
+} satisfies Meta<typeof Switch>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

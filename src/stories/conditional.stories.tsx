@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { WrapperConditional } from "../components/wrapper-conditional";
+import { Conditional } from "../components/conditional";
 
 const meta = {
   title: "Wrappers/Conditional",
-  component: WrapperConditional,
+  component: Conditional,
   args: {
     condition: true,
     wrapper: <div style={{ background: "gold", height: 64, width: 64 }} />,
@@ -14,8 +14,8 @@ const meta = {
     children: { table: { disable: true } },
     wrapper: { table: { disable: true } },
   },
-  render: (args) => <WrapperConditional {...args} />,
-} satisfies Meta<typeof WrapperConditional>;
+  render: (args) => <Conditional {...args} />,
+} satisfies Meta<typeof Conditional>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

@@ -1,16 +1,16 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { WrapperDisabled } from "../components/wrapper-disabled";
+import { Disabled } from "../components/disabled";
 
 const meta = {
   title: "Wrappers/Disabled",
-  component: WrapperDisabled,
+  component: Disabled,
   args: {
     disabled: true,
     children: <div style={{ background: "gold", height: 64, width: 64 }} />,
   },
-  render: (args) => <WrapperDisabled {...args} />,
-} satisfies Meta<typeof WrapperDisabled>;
+  render: (args) => <Disabled {...args} />,
+} satisfies Meta<typeof Disabled>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

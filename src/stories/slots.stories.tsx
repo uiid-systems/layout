@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { WrapperSlots } from "../components/wrapper-slots";
+import { Slots } from "../components/slots";
 
 const meta = {
   title: "Wrappers/Slots",
-  component: WrapperSlots,
+  component: Slots,
   args: {
     direction: "row",
     before: <div style={{ background: "tomato", height: 64, width: 64 }} />,
@@ -13,11 +13,11 @@ const meta = {
     ),
   },
   render: (args) => (
-    <WrapperSlots {...args}>
+    <Slots {...args}>
       <div style={{ background: "gold", height: 64, width: 64 }} />
-    </WrapperSlots>
+    </Slots>
   ),
-} satisfies Meta<typeof WrapperSlots>;
+} satisfies Meta<typeof Slots>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

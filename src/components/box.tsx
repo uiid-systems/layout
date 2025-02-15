@@ -8,14 +8,14 @@ import {
 import { isValidElement, cloneElement } from "react";
 
 import * as properties from "../properties";
-import type { VariantProps } from "../types";
+import type { LayoutBooleanProps } from "../types";
 
 export type BoxProps = {
-  render?: (() => RenderProp) | RenderProp;
+  render?: RenderProp;
 } & React.HTMLAttributes<HTMLElement> &
   React.PropsWithChildren &
   StyleProps<typeof properties> &
-  VariantProps;
+  LayoutBooleanProps;
 
 export const Box = ({
   center,
@@ -34,7 +34,6 @@ export const Box = ({
   children,
   ...props
 }: BoxProps) => {
-  const element = typeof render === "function" ? render() : render;
   const styles = { ...styleProps(props, properties), ...style };
   const variants = booleanProps({
     center,
@@ -49,12 +48,12 @@ export const Box = ({
     wrap,
   });
 
-  if (isValidElement(element)) {
-    return cloneElement(element, {
+  if (isValidElement(render)) {
+    return cloneElement(render, {
       ...props,
       "data-uiid-layout": "box",
-      children: children ?? element.props.children,
-      className: cx(variants, className, element.props.className),
+      children: children ?? render.props.children,
+      className: cx(variants, className, render.props.className),
       style: styles,
     } as React.HTMLAttributes<HTMLElement>);
   }

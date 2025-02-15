@@ -1,6 +1,6 @@
 import { cloneElement } from "react";
 
-export interface WrapperSwitchProps {
+export interface SwitchProps {
   condition: boolean;
   wrappers: {
     true: React.ReactElement<any>;
@@ -9,16 +9,9 @@ export interface WrapperSwitchProps {
   children?: React.ReactNode;
 }
 
-export function WrapperSwitch({
-  condition,
-  wrappers,
-  children,
-}: WrapperSwitchProps) {
+export function Switch({ condition, wrappers, children }: SwitchProps) {
   const selectedWrapper = condition ? wrappers.true : wrappers.false;
-
   if (!selectedWrapper) return <>{children}</>;
-
   const contentToRender = children ?? selectedWrapper.props.children;
-
   return cloneElement(selectedWrapper, undefined, contentToRender);
 }

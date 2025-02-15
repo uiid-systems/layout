@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Stack } from "../components/stack";
 
 const meta = {
-  title: "Position/Stack",
+  title: "Positional/Stack",
   component: Stack,
   args: { gap: 1 },
   render: (args) => (
