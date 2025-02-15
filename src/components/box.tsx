@@ -52,10 +52,11 @@ export const Box = ({
   if (isValidElement(element)) {
     return cloneElement(element, {
       ...props,
+      "data-uiid-layout": "box",
       children: children ?? element.props.children,
       className: cx(variants, className, element.props.className),
       style: styles,
-    });
+    } as React.HTMLAttributes<HTMLElement>);
   }
 
   return (
