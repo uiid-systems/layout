@@ -15,6 +15,7 @@ export const WrapperSlots = ({
   direction,
   className,
   children,
+  style,
   ...props
 }: WrapperSlotsProps) => {
   /** @todo pass props? */
@@ -27,9 +28,9 @@ export const WrapperSlots = ({
 
   return (
     <Box
-      display="inline-flex"
       direction={direction}
       className={className}
+      style={{ display: "inline-flex", ...style }}
       {...props}
     >
       {beforeElement}
