@@ -19,6 +19,7 @@
 
 [data-uiid-layout="slots"] {
   display: inline-flex;
+  align-items: center;
 }
 
 [data-uiid-layout="stack"] {

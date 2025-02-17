@@ -16,7 +16,7 @@ export const Slots = ({
   className,
   children,
   style,
-  display = "inline-flex",
+  display,
   ...props
 }: SlotsProps) => {
   const hasSlot = Boolean(before || after);
