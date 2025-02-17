@@ -3,7 +3,7 @@ import { cloneElement } from "react";
 import { Box, type BoxProps } from "./box";
 import { Conditional } from "./conditional";
 
-type Slot = React.ReactElement<any>;
+type Slot = React.ReactElement<any> | string | number;
 
 export type SlotsProps = {
   before?: Slot;
