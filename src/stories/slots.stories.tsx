@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { disableArgTypes } from "@uiid/core/storybook";
 
 import { Box } from "../components/box";
 import { Stack } from "../components/stack";
@@ -11,10 +12,13 @@ const meta = {
   args: {
     direction: "row",
     gap: 4,
-    before: <div style={{ background: "tomato", height: 64, width: 64 }} />,
+    before: <Box style={{ background: "tomato", height: 64, width: 64 }} />,
     after: (
-      <div style={{ background: "mediumseagreen", height: 64, width: 64 }} />
+      <Box style={{ background: "mediumseagreen", height: 64, width: 64 }} />
     ),
+  },
+  argTypes: {
+    ...disableArgTypes("before", "after", "render"),
   },
   render: (args) => (
     <Stack gap={4}>

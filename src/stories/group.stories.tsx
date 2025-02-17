@@ -8,9 +8,6 @@ const meta = {
   title: "Positional/Group",
   component: Group,
   args: { gap: 4 },
-  parameters: {
-    layout: "fullscreen",
-  },
   render: (args) => (
     <Stack gap={4} fullwidth>
       <Group {...args}>
