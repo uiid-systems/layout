@@ -6,19 +6,32 @@ import {
 
 import { Box } from "../components/box";
 import * as properties from "../properties";
+import { Stack } from "../components/stack";
+
+const Placeholder = (props: any) => (
+  <Box {...props} style={{ background: "tomato" }} />
+);
 
 const meta = {
   title: "Primitives/Box",
   component: Box,
-  render: (args) => (
-    <Box {...args} style={{ background: "gold", height: 64, width: 64 }} />
-  ),
   args: {
-    center: false,
+    ax: "between",
   },
+  render: (args) => (
+    <Stack gap={8}>
+      <Placeholder {...args}>Default</Placeholder>
+      <Placeholder {...args} disabled>
+        Disabled
+      </Placeholder>
+      <Placeholder {...args} interactive>
+        Interactive
+      </Placeholder>
+    </Stack>
+  ),
   argTypes: {
-    ...disableArgTypes("render"),
     ...convertStylePropertiesToArgTypes(properties, "Style\xa0Properties"),
+    ...disableArgTypes("render"),
   },
 } satisfies Meta<typeof Box>;
 

@@ -1,70 +1,45 @@
-import {
-  cx,
-  booleanProps,
-  styleProps,
-  type StyleProps,
-  type RenderProp,
-} from "@uiid/core";
+import { cx, booleanProps, styleProps, type RenderProp } from "@uiid/core";
 import { isValidElement, cloneElement } from "react";
 
-import * as properties from "../properties";
-import type { LayoutBooleanProps } from "../types";
+import * as styleProperties from "../properties";
+import type { LayoutBooleanProps, LayoutStyleProps } from "../types";
 
 export type BoxProps = {
   render?: RenderProp;
 } & React.HTMLAttributes<HTMLElement> &
   React.PropsWithChildren &
-  StyleProps<typeof properties> &
-  LayoutBooleanProps;
+  LayoutBooleanProps &
+  LayoutStyleProps;
 
 export const Box = ({
-  center,
   disabled,
-  evenly,
-  fullheight,
-  fullscreen,
-  fullwidth,
   hidden,
   inactive,
-  inline,
-  wrap,
+  interactive,
   render,
   className,
-  style,
   children,
   ...props
 }: BoxProps) => {
-  const styles = { ...styleProps(props, properties), ...style };
-  const variants = booleanProps({
-    center,
-    disabled,
-    evenly,
-    fullheight,
-    fullscreen,
-    fullwidth,
-    hidden,
-    inactive,
-    inline,
-    wrap,
-  });
+  const styles = styleProps(props, styleProperties);
+  const variants = booleanProps({ disabled, hidden, inactive, interactive });
+
+  const propsWithUiid = {
+    "data-uiid-layout": "box",
+    ...props,
+  };
 
   if (isValidElement(render)) {
     return cloneElement(render, {
-      ...props,
-      "data-uiid-layout": "box",
+      ...propsWithUiid,
       children: children ?? render.props.children,
-      className: cx(variants, className, render.props.className),
       style: styles,
+      className: cx(variants, className, render.props.className),
     } as React.HTMLAttributes<HTMLElement>);
   }
 
   return (
-    <div
-      data-uiid-layout="box"
-      className={cx(variants, className)}
-      style={styles}
-      {...props}
-    >
+    <div {...propsWithUiid} style={styles} className={cx(variants, className)}>
       {children}
     </div>
   );

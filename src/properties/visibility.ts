@@ -1,4 +1,4 @@
-import type { StyleProp } from "@uiid/core";
+import type { StyleProp } from "@uiid/core/properties";
 
 /**
  * @see https://developer.mozilla.org/en-US/docs/Web/CSS/visibility
@@ -6,7 +6,7 @@ import type { StyleProp } from "@uiid/core";
 export const visibility = {
   property: "visibility",
   values: ["visible", "hidden"] as const,
-} satisfies StyleProp;
+} satisfies StyleProp<"visibility">;
 
 /**
  * @see https://developer.mozilla.org/en-US/docs/Web/CSS/opacity
@@ -14,7 +14,7 @@ export const visibility = {
 export const opacity = {
   property: "opacity",
   values: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100] as const,
-} satisfies StyleProp;
+} satisfies StyleProp<"opacity">;
 
 /**
  * @see https://developer.mozilla.org/en-US/docs/Web/CSS/display
@@ -30,4 +30,4 @@ export const display = {
     "inline-flex",
     "contents",
   ] as const,
-} satisfies StyleProp;
+} satisfies StyleProp<"display">;

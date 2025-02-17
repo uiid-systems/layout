@@ -7,6 +7,7 @@ export const BOOLEAN_PROPS = [
   "fullwidth",
   "hidden",
   "inactive",
+  "interactive",
   "inline",
   "wrap",
 ] as const;

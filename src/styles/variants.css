@@ -41,16 +41,15 @@
     opacity: var(--inactive-opacity);
   }
 
-  &.inline {
-    display: inline-flex;
-  }
-
   &.interactive {
     cursor: pointer;
     transition: scale var(--scale-duration) ease;
+    user-select: none;
+
     &:hover {
       scale: var(--scale-hover);
     }
+
     &:active {
       scale: var(--scale-active);
     }
