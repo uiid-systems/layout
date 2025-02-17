@@ -6,9 +6,9 @@ import type { StyleProp } from "@uiid/core/properties";
 export const ax = {
   property: "justifyContent",
   values: [
-    "around",
+    "space-around",
     "baseline",
-    "between",
+    "space-between",
     "center",
     "end",
     "evenly",
