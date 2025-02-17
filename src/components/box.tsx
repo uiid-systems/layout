@@ -1,22 +1,9 @@
-import { cx, styleProps, type RenderProp } from "@uiid/core";
+import { cx, styleProps, booleanProps, type RenderProp } from "@uiid/core";
 import { isValidElement, cloneElement } from "react";
 
 import { BOOLEAN_PROPS } from "../constants";
 import * as styleProperties from "../properties";
 import type { LayoutBooleanProps, LayoutStyleProps } from "../types";
-
-type BooleanConfigProps = Partial<Record<string, boolean>>;
-
-export const booleanProps = <T extends readonly string[]>(
-  props: Record<string, any>,
-  booleanProperties: T
-) => {
-  const classes = booleanProperties
-    .filter((key) => props[key] === true)
-    .join(" ");
-
-  return classes;
-};
 
 export type BoxProps = {
   render?: RenderProp;

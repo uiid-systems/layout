@@ -13,7 +13,7 @@ importers:
     dependencies:
       '@uiid/core':
         specifier: latest
-        version: 0.0.0-alpha.22(storybook@8.5.6)(typescript@5.7.2)
+        version: 0.0.0-alpha.23(storybook@8.5.6)(typescript@5.7.2)
       react:
         specifier: ^19.0.0
         version: 19.0.0
@@ -948,8 +948,8 @@ packages:
   '@types/uuid@9.0.8':
     resolution: {integrity: sha512-jg+97EGIcY9AGHJJRaaPVgetKDsrTgbRjQ5Msgjh/DQKEFl0DtyRr/VCOyD1T2R1MNeWPK/u7JoGhlDZnKBAfA==}
 
-  '@uiid/core@0.0.0-alpha.22':
-    resolution: {integrity: sha512-QF9oUnalFzOxcwvDFp+N3fMJXBdS9acJDtZsGhkEfQcoKayB2DpyBHd3hvGSNkAVCA61NGT50C46rJ9yQ7w8+g==}
+  '@uiid/core@0.0.0-alpha.23':
+    resolution: {integrity: sha512-TWX19gLBqioL3xmj/RV29bgI6o8s7/5rAqmeqIM9t5eLTJ0oegbtnZpRQ4RwYpSZPK8KfU3b/h8Jrn2EzRNhww==}
     engines: {node: '>=18.0.0'}
 
   '@vitejs/plugin-react@4.3.4':
@@ -2883,7 +2883,7 @@ snapshots:
 
   '@types/uuid@9.0.8': {}
 
-  '@uiid/core@0.0.0-alpha.22(storybook@8.5.6)(typescript@5.7.2)':
+  '@uiid/core@0.0.0-alpha.23(storybook@8.5.6)(typescript@5.7.2)':
     dependencies:
       '@storybook/types': 8.5.6(storybook@8.5.6)
       cva: 1.0.0-beta.3(typescript@5.7.2)
