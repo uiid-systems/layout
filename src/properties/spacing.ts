@@ -1,4 +1,4 @@
-import type { StyleProp } from "../styleProps";
+import type { StyleProp } from "@uiid/core/properties";
 
 /**
  * @see https://developer.mozilla.org/en-US/docs/Web/CSS/margin
