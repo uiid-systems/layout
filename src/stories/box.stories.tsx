@@ -5,14 +5,20 @@ import {
 } from "@uiid/core/storybook";
 
 import { Box } from "../components/box";
-import * as properties from "../properties";
+import * as properties from "../properties/style";
 
 const meta = {
   title: "Primitives/Box",
   component: Box,
-  args: {},
+  args: {
+    hidden: false,
+  },
   render: (args) => (
-    <Box {...args} style={{ background: "gold", width: 64, height: 64 }} />
+    <Box
+      display="inline-flex"
+      {...args}
+      style={{ background: "gold", width: 64, height: 64 }}
+    />
   ),
   argTypes: {
     ...convertStylePropertiesToArgTypes(properties, "Style\xa0Properties"),

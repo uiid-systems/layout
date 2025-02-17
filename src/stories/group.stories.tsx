@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
+import { Box } from "../components/box";
 import { Group } from "../components/group";
 import { Stack } from "../components/stack";
 
@@ -7,6 +8,9 @@ const meta = {
   title: "Positional/Group",
   component: Group,
   args: { gap: 4 },
+  parameters: {
+    layout: "fullscreen",
+  },
   render: (args) => (
     <Stack gap={4} fullwidth>
       <Group {...args}>
@@ -35,8 +39,8 @@ export const Default: Story = { name: "Group" };
 
 const Boxes = () => (
   <>
-    <div style={{ background: "tomato", height: 64, width: 64 }} />
-    <div style={{ background: "gold", height: 64, width: 64 }} />
-    <div style={{ background: "mediumseagreen", height: 64, width: 64 }} />
+    <Box style={{ background: "tomato", height: 64, width: 64 }} />
+    <Box style={{ background: "gold", height: 64, width: 64 }} />
+    <Box style={{ background: "mediumseagreen", height: 64, width: 64 }} />
   </>
 );

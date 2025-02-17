@@ -1,10 +1,21 @@
 [data-uiid-layout="group"] {
   display: flex;
+
+  &.inline {
+    display: "inline-flex";
+  }
 }
 
 [data-uiid-layout="stack"] {
   display: inline-flex;
   flex-direction: column;
+}
+
+[data-uiid-layout="group"],
+[data-uiid-layout="stack"] {
+  &.evenly > * {
+    flex: 1;
+  }
 }
 
 [data-uiid-layout="layer"] {
