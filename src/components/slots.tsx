@@ -21,13 +21,16 @@ export const Slots = ({
 }: SlotsProps) => {
   const hasSlot = Boolean(before || after);
 
-  /** @todo pass props? */
-  const beforeElement =
-    before && cloneElement(before, undefined, before.props.children);
+  const renderSlot = (slot: Slot | undefined) => {
+    if (!slot) return null;
+    if (typeof slot === "string" || typeof slot === "number") {
+      return slot;
+    }
+    return cloneElement(slot, undefined, slot.props.children);
+  };
 
-  /** @todo pass props? */
-  const afterElement =
-    after && cloneElement(after, undefined, after.props.children);
+  const beforeElement = renderSlot(before);
+  const afterElement = renderSlot(after);
 
   return (
     <Conditional
