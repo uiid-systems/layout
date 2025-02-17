@@ -1,8 +1,22 @@
-import { cx, booleanProps, styleProps, type RenderProp } from "@uiid/core";
+import { cx, styleProps, type RenderProp } from "@uiid/core";
 import { isValidElement, cloneElement } from "react";
 
+import { BOOLEAN_PROPS } from "../constants";
 import * as styleProperties from "../properties";
 import type { LayoutBooleanProps, LayoutStyleProps } from "../types";
+
+type BooleanConfigProps = Partial<Record<string, boolean>>;
+
+export const booleanProps = <T extends readonly string[]>(
+  props: Record<string, any>,
+  booleanProperties: T
+) => {
+  const classes = booleanProperties
+    .filter((key) => props[key] === true)
+    .join(" ");
+
+  return classes;
+};
 
 export type BoxProps = {
   render?: RenderProp;
@@ -11,18 +25,9 @@ export type BoxProps = {
   LayoutBooleanProps &
   LayoutStyleProps;
 
-export const Box = ({
-  disabled,
-  hidden,
-  inactive,
-  interactive,
-  render,
-  className,
-  children,
-  ...props
-}: BoxProps) => {
+export const Box = ({ render, className, children, ...props }: BoxProps) => {
   const styles = styleProps(props, styleProperties);
-  const variants = booleanProps({ disabled, hidden, inactive, interactive });
+  const variants = booleanProps(props, BOOLEAN_PROPS);
 
   const propsWithUiid = {
     "data-uiid-layout": "box",

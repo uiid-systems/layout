@@ -3,7 +3,7 @@
 }
 
 [data-uiid-layout="stack"] {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
 }
 

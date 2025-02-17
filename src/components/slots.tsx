@@ -15,6 +15,7 @@ export const Slots = ({
   className,
   children,
   style,
+  display = "inline-flex",
   ...props
 }: SlotsProps) => {
   /** @todo pass props? */
@@ -26,7 +27,7 @@ export const Slots = ({
     after && cloneElement(after, undefined, after.props.children);
 
   return (
-    <Box {...props}>
+    <Box data-uiid-layout="slots" display={display} {...props}>
       {beforeElement}
       {children}
       {afterElement}
