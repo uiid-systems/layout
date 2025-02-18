@@ -2,7 +2,7 @@ import { cx, styleProps, booleanProps, type RenderProp } from "@uiid/core";
 import { isValidElement, cloneElement } from "react";
 
 import * as STYLE_PROPS from "@uiid/style-props/styles";
-import * as BOOLEAN_PROPS from "../properties/boolean";
+import * as TOGGLE_PROPS from "@uiid/style-props/toggles";
 import type { LayoutBooleanProps, LayoutStyleProps } from "../types";
 
 export type BoxProps = {
@@ -16,7 +16,7 @@ type StyleObject = Record<string, React.CSSProperties>;
 
 export const Box = ({ render, children, ...props }: BoxProps) => {
   const styles = styleProps(props, STYLE_PROPS);
-  const variants = booleanProps(props, BOOLEAN_PROPS);
+  const variants = booleanProps(props, TOGGLE_PROPS);
 
   const propsWithUiid = {
     "data-uiid-layout": "box",

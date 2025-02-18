@@ -1,10 +1,9 @@
 import type { StyleProps } from "@uiid/core/properties";
-
-import * as BOOLEAN_PROPS from "./properties/boolean";
-import * as STYLE_PROPS from "./properties/style";
+import * as TOGGLE_PROPS from "@uiid/style-props/toggles";
+import * as STYLE_PROPS from "@uiid/style-props/styles";
 
 export type LayoutBooleanProps = {
-  [K in keyof typeof BOOLEAN_PROPS]?: boolean;
+  [K in keyof typeof TOGGLE_PROPS]?: boolean;
 };
 
 export type LayoutStyleProps = StyleProps<typeof STYLE_PROPS>;
