@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { disableArgTypes } from "@uiid/core/storybook";
 
 import { Disabled } from "../components/disabled";
 
@@ -9,6 +10,7 @@ const meta = {
     disabled: true,
     children: <div style={{ background: "gold", height: 64, width: 64 }} />,
   },
+  argTypes: disableArgTypes("children"),
   render: (args) => <Disabled {...args} />,
 } satisfies Meta<typeof Disabled>;
 

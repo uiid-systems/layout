@@ -18,7 +18,7 @@ const meta = {
     ),
   },
   argTypes: {
-    ...disableArgTypes("before", "after", "render"),
+    ...disableArgTypes("before", "after", "render", "direction", "gap", "ref"),
   },
   render: (args) => (
     <Stack gap={4}>

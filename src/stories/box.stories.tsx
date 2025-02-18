@@ -17,12 +17,12 @@ const meta = {
     <Box
       display="inline-flex"
       {...args}
-      style={{ background: "gold", width: 64, height: 64 }}
+      style={{ background: "tomato", width: 64, height: 64 }}
     />
   ),
   argTypes: {
     ...convertStylePropertiesToArgTypes(STYLE_PROPS, "Style\xa0Properties"),
-    ...disableArgTypes("render"),
+    ...disableArgTypes("render", "ref"),
   },
 } satisfies Meta<typeof Box>;
 
