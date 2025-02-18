@@ -51,6 +51,9 @@ importers:
       '@types/react-dom':
         specifier: ^19.0.3
         version: 19.0.3(@types/react@19.0.9)
+      '@uiid/style-props':
+        specifier: 0.0.0-alpha.0
+        version: 0.0.0-alpha.0(storybook@8.5.6)(typescript@5.7.2)
       '@vitejs/plugin-react':
         specifier: ^4.3.4
         version: 4.3.4(vite@6.1.0(@types/node@22.10.5)(jiti@2.4.2)(lightningcss@1.29.1)(tsx@4.19.2)(yaml@2.6.1))
@@ -950,6 +953,10 @@ packages:
 
   '@uiid/core@0.0.0-alpha.24':
     resolution: {integrity: sha512-LNcO82JbUBol6nGi6n67vVXWONP2WgjtBHOWqjNyiE9qX9TPF6TgIc1u+PNZHU95TI1bD2MUrHTM+gOU2wzfxQ==}
+    engines: {node: '>=18.0.0'}
+
+  '@uiid/style-props@0.0.0-alpha.0':
+    resolution: {integrity: sha512-OiEQbwyqwqfQ57zz5HRWMQVBi6o8CXGVWrWGh0Wc6+IO4YaffsnzG8zougcgIZd6qbCrA28DevLsQsLdHwB32A==}
     engines: {node: '>=18.0.0'}
 
   '@vitejs/plugin-react@4.3.4':
@@ -2888,6 +2895,13 @@ snapshots:
       '@storybook/types': 8.5.6(storybook@8.5.6)
       cva: 1.0.0-beta.3(typescript@5.7.2)
       tailwind-merge: 3.0.1
+    transitivePeerDependencies:
+      - storybook
+      - typescript
+
+  '@uiid/style-props@0.0.0-alpha.0(storybook@8.5.6)(typescript@5.7.2)':
+    dependencies:
+      '@uiid/core': 0.0.0-alpha.24(storybook@8.5.6)(typescript@5.7.2)
     transitivePeerDependencies:
       - storybook
       - typescript

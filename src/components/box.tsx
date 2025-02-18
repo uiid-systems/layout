@@ -1,7 +1,7 @@
 import { cx, styleProps, booleanProps, type RenderProp } from "@uiid/core";
 import { isValidElement, cloneElement } from "react";
 
-import * as STYLE_PROPS from "../properties/style";
+import * as STYLE_PROPS from "@uiid/style-props/styles";
 import * as BOOLEAN_PROPS from "../properties/boolean";
 import type { LayoutBooleanProps, LayoutStyleProps } from "../types";
 

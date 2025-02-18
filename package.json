@@ -20,7 +20,8 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@uiid/core": "latest"
+    "@uiid/core": "latest",
+    "@uiid/style-props": "latest"
   },
   "peerDependencies": {
     "react": "^19.0.0",
