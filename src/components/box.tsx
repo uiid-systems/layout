@@ -27,7 +27,7 @@ export const Box = ({ render, children, ...props }: BoxProps) => {
       ...propsWithUiid,
       children: children ?? render.props.children,
       className: cx(props.className, render.props.className),
-    } as React.HTMLAttributes<HTMLElement>);
+    });
   }
 
   return <div {...propsWithUiid}>{children}</div>;
