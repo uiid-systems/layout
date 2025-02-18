@@ -1,18 +1,16 @@
 import { cx, styleProps, booleanProps, type RenderProp } from "@uiid/core";
 import { isValidElement, cloneElement } from "react";
 
-import * as STYLE_PROPS from "@uiid/style-props/styles";
-import * as TOGGLE_PROPS from "@uiid/style-props/toggles";
+import { STYLE_PROPS, TOGGLE_PROPS } from "../constants";
 import type { LayoutBooleanProps, LayoutStyleProps } from "../types";
 
-export type BoxProps = {
-  render?: RenderProp;
-} & React.HTMLAttributes<HTMLElement> &
+export type BoxProps = React.HTMLAttributes<HTMLElement> &
   React.PropsWithChildren &
   LayoutBooleanProps &
-  LayoutStyleProps;
-
-type StyleObject = Record<string, React.CSSProperties>;
+  LayoutStyleProps & {
+    render?: RenderProp;
+    ref?: React.Ref<any>;
+  };
 
 export const Box = ({ render, children, ...props }: BoxProps) => {
   const styles = styleProps(props, STYLE_PROPS);

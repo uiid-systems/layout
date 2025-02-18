@@ -5,7 +5,7 @@ import {
 } from "@uiid/core/storybook";
 
 import { Box } from "../components/box";
-import * as properties from "../properties/style";
+import { STYLE_PROPS } from "../constants";
 
 const meta = {
   title: "Primitives/Box",
@@ -21,7 +21,7 @@ const meta = {
     />
   ),
   argTypes: {
-    ...convertStylePropertiesToArgTypes(properties, "Style\xa0Properties"),
+    ...convertStylePropertiesToArgTypes(STYLE_PROPS, "Style\xa0Properties"),
     ...disableArgTypes("render"),
   },
 } satisfies Meta<typeof Box>;

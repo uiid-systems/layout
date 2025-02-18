@@ -1,7 +1,3 @@
-[data-uiid-layout="card"] {
-  border-radius: var(--card-radius);
-}
-
 [data-uiid-layout="group"] {
   display: flex;
 
