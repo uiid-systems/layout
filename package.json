@@ -1,7 +1,7 @@
 {
   "name": "@uiid/layout",
   "description": "react layout components",
-  "version": "0.0.0-alpha.23",
+  "version": "0.0.0-alpha.24",
   "exports": {
     "./styles.css": "./dist/styles.css",
     ".": {
