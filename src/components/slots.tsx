@@ -10,23 +10,13 @@ export type SlotsProps = {
   after?: Slot;
 } & BoxProps;
 
-export const Slots = ({
-  before,
-  after,
-  className,
-  children,
-  style,
-  display,
-  ...props
-}: SlotsProps) => {
+export const Slots = ({ before, after, children, ...props }: SlotsProps) => {
   const hasSlot = Boolean(before || after);
 
   const renderSlot = (slot: Slot | undefined) => {
     if (!slot) return null;
-    if (typeof slot === "string" || typeof slot === "number") {
-      return slot;
-    }
-    return cloneElement(slot, undefined, slot.props.children);
+    if (typeof slot === "string" || typeof slot === "number") return slot;
+    return cloneElement(slot, slot.props, slot.props.children);
   };
 
   const beforeElement = renderSlot(before);
@@ -35,7 +25,7 @@ export const Slots = ({
   return (
     <Conditional
       condition={hasSlot}
-      wrapper={<Box data-uiid-layout="slots" display={display} {...props} />}
+      wrapper={<Box data-uiid-layout="slots" {...props} />}
     >
       {beforeElement}
       {children}
