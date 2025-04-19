@@ -15,3 +15,4 @@ export function Switch({ condition, wrappers, children }: SwitchProps) {
   const contentToRender = children ?? selectedWrapper.props.children;
   return cloneElement(selectedWrapper, undefined, contentToRender);
 }
+Switch.displayName = "Switch";

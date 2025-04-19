@@ -44,7 +44,7 @@ export const Box = ({ render, children, ...allProps }: BoxProps) => {
   });
 
   const propsWithUiid = {
-    "data-uiid-layout": "box",
+    "data-uiid": "layout-box",
     ...filteredProps,
     style: { ...styles, ...variants },
   };
@@ -59,5 +59,4 @@ export const Box = ({ render, children, ...allProps }: BoxProps) => {
 
   return <div {...propsWithUiid}>{children}</div>;
 };
-
 Box.displayName = "Box";

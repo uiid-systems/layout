@@ -1,4 +1,4 @@
-[data-uiid-layout] {
+:root {
   --card-radius: 0.5rem;
   --inactive-opacity: 0.5;
   --scale-hover: 1.02;

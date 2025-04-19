@@ -1,32 +1,32 @@
-[data-uiid-layout="group"] {
+[data-uiid="layout-group"] {
   display: flex;
 
   &.inline {
-    display: "inline-flex";
+    display: inline-flex;
   }
 }
 
-[data-uiid-layout="layer"] {
+[data-uiid="layout-layer"] {
   display: grid;
   & > * {
     grid-area: 1 / 1;
   }
 }
 
-[data-uiid-layout="slots"] {
+[data-uiid="layout-slots"] {
   display: inline-flex;
   align-items: center;
 }
 
-[data-uiid-layout="stack"] {
+[data-uiid="layout-stack"] {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-[data-uiid-layout="group"],
-[data-uiid-layout="stack"],
-[data-uiid-layout="slots"] {
+[data-uiid="layout-group"],
+[data-uiid="layout-stack"],
+[data-uiid="layout-slots"] {
   &.evenly > * {
     flex: 1;
   }

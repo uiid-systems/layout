@@ -25,7 +25,7 @@ export const Slots = ({ before, after, children, ...props }: SlotsProps) => {
   return (
     <Conditional
       condition={hasSlot}
-      wrapper={<Box data-uiid-layout="slots" {...props} />}
+      wrapper={<Box data-uiid="layout-slots" {...props} />}
     >
       {beforeElement}
       {children}
@@ -33,5 +33,4 @@ export const Slots = ({ before, after, children, ...props }: SlotsProps) => {
     </Conditional>
   );
 };
-
 Slots.displayName = "Slots";

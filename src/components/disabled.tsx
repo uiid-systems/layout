@@ -10,7 +10,9 @@ export const Disabled = ({ children, disabled }: DisabledProps) => {
       aria-disabled={disabled}
       data-disabled={disabled}
       condition={disabled}
-      wrapper={<div style={{ cursor: "not-allowed" }} />}
+      wrapper={
+        <div data-uiid="layout-disabled" style={{ cursor: "not-allowed" }} />
+      }
     >
       {children}
     </Conditional>
