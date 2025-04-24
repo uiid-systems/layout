@@ -28,12 +28,6 @@ describe(`box`, () => {
     expect(h1).toHaveTextContent(text);
   });
 
-  test("supports style props", () => {
-    render(<Box data-testid="box" visibility="hidden" />);
-    const text = screen.getByTestId("box");
-    expect(text).toHaveStyle("visibility: hidden");
-  });
-
   // test ref
-  // test boolean props
+  // test toggle props
 });

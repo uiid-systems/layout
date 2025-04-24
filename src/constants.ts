@@ -1,5 +1,7 @@
-import * as styleProps from "@uiid/style-props/styles";
-import * as toggleProps from "@uiid/style-props/toggles";
+import type { ToggleProps } from "@uiid/style-props/toggles";
 
-export const STYLE_PROPS = styleProps;
-export const TOGGLE_PROPS = toggleProps;
+export const TOGGLE_PROPS: Array<keyof ToggleProps> = [
+  "fullwidth",
+  "interactive",
+  "fullheight",
+] as const;

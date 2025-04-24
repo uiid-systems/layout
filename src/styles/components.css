@@ -1,33 +1,35 @@
-[data-uiid="layout-group"] {
+/* group */
+[uiid-cat="layout"][uiid="group"] {
   display: flex;
-
-  &.inline {
-    display: inline-flex;
-  }
 }
-
-[data-uiid="layout-layer"] {
-  display: grid;
-  & > * {
-    grid-area: 1 / 1;
-  }
-}
-
-[data-uiid="layout-slots"] {
+[uiid-cat="layout"][uiid="group"].inline {
   display: inline-flex;
-  align-items: center;
 }
 
-[data-uiid="layout-stack"] {
+/* stack */
+[uiid-cat="layout"][uiid="stack"] {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-[data-uiid="layout-group"],
-[data-uiid="layout-stack"],
-[data-uiid="layout-slots"] {
-  &.evenly > * {
-    flex: 1;
-  }
+/* layer */
+[uiid-cat="layout"][uiid="layer"] {
+  display: grid;
+}
+[uiid-cat="layout"][uiid="layer"] > * {
+  grid-area: 1 / 1;
+}
+
+/* slots */
+[uiid-cat="layout"][uiid="slots"] {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* shared, MOVE TO TOGGLE PROP?? */
+[uiid-cat="layout"][uiid="group"].evenly > *,
+[uiid-cat="layout"][uiid="stack"].evenly > *,
+[uiid-cat="layout"][uiid="slots"].evenly > * {
+  flex: 1;
 }

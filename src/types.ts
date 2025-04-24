@@ -1,8 +1,11 @@
-import type { StyleProps } from "@uiid/core/properties";
-import { STYLE_PROPS, TOGGLE_PROPS } from "./constants";
+import type { FlexProps, SpacingProps } from "@uiid/style-props/styles";
+import type { ToggleProps } from "@uiid/style-props/toggles";
 
-export type LayoutBooleanProps = {
-  [K in keyof typeof TOGGLE_PROPS]?: boolean;
-};
+import { TOGGLE_PROPS } from "./constants";
 
-export type LayoutStyleProps = StyleProps<typeof STYLE_PROPS>;
+export type LayoutStyleProps = FlexProps & SpacingProps;
+
+export type LayoutToggleProps = Pick<
+  ToggleProps,
+  (typeof TOGGLE_PROPS)[number]
+>;

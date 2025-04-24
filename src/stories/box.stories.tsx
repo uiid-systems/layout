@@ -1,11 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import {
-  disableArgTypes,
-  convertStylePropertiesToArgTypes,
-} from "@uiid/core/storybook";
+import { disableArgTypes } from "@uiid/core/storybook";
 
 import { Box } from "../components/box";
-import { STYLE_PROPS } from "../constants";
 
 const meta = {
   title: "Primitives/Box",
@@ -15,13 +11,14 @@ const meta = {
   },
   render: (args) => (
     <Box
-      display="inline-flex"
       {...args}
+      p={2}
+      m={2}
+      interactive
       style={{ background: "tomato", width: 64, height: 64 }}
     />
   ),
   argTypes: {
-    ...convertStylePropertiesToArgTypes(STYLE_PROPS, "Style\xa0Properties"),
     ...disableArgTypes("render", "ref"),
   },
 } satisfies Meta<typeof Box>;

@@ -23,10 +23,7 @@ export const Slots = ({ before, after, children, ...props }: SlotsProps) => {
   const afterElement = renderSlot(after);
 
   return (
-    <Conditional
-      condition={hasSlot}
-      wrapper={<Box data-uiid="layout-slots" {...props} />}
-    >
+    <Conditional condition={hasSlot} wrapper={<Box uiid="slots" {...props} />}>
       {beforeElement}
       {children}
       {afterElement}

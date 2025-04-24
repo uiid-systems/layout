@@ -1,2 +1,3 @@
 @import "@uiid/core/styles/globals.css";
+@import "@uiid/style-props/styles.css";
 @import "../src/styles.css";

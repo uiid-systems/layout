@@ -62,12 +62,7 @@ export const Layer = ({
     : children;
 
   return (
-    <Box
-      data-uiid="layout-layer"
-      className={className}
-      style={parentStyle}
-      {...props}
-    >
+    <Box uiid="layer" className={className} style={parentStyle} {...props}>
       {layeredChildren}
     </Box>
   );

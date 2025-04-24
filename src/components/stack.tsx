@@ -9,7 +9,7 @@ export type StackProps = {
 
 export const Stack = ({ ax, ay, evenly, className, ...props }: StackProps) => (
   <Box
-    data-uiid="layout-stack"
+    uiid="stack"
     ax={ay}
     ay={ax}
     className={cx(className, { evenly })}

@@ -1,62 +1,50 @@
-import { cx, styleProps, booleanProps, type RenderProp } from "@uiid/core";
+import { cx, type RenderProp } from "@uiid/core";
+import { styleProps } from "@uiid/style-props/utils";
+import * as STYLE_PROPS from "@uiid/style-props/styles";
+
 import { isValidElement, cloneElement } from "react";
 
-import { STYLE_PROPS, TOGGLE_PROPS } from "../constants";
-import type { LayoutBooleanProps, LayoutStyleProps } from "../types";
+import type { LayoutStyleProps, LayoutToggleProps } from "../types";
+import { TOGGLE_PROPS } from "../constants";
 
 export type BoxProps = React.HTMLAttributes<HTMLElement> &
   React.PropsWithChildren &
-  LayoutBooleanProps &
-  LayoutStyleProps & {
+  LayoutStyleProps &
+  LayoutToggleProps & {
     render?: RenderProp;
     ref?: React.Ref<any>;
   };
 
-export const Box = ({ render, children, ...allProps }: BoxProps) => {
-  const styles = styleProps(allProps, STYLE_PROPS);
-  const variants = booleanProps(allProps, TOGGLE_PROPS);
-
-  // Destructure all the toggle and style props to remove them
-  // Create an array of all the props we want to filter out
-  const togglePropKeys = Object.keys(TOGGLE_PROPS) as Array<
-    keyof typeof TOGGLE_PROPS
-  >;
-  const stylePropKeys = Object.keys(STYLE_PROPS) as Array<
-    keyof typeof STYLE_PROPS
-  >;
-
-  // Create a new props object without the toggle/style props
-  // This avoids TypeScript errors by using a record
-  const filteredProps: Record<string, unknown> = { ...allProps };
-
-  // Remove toggle props
-  togglePropKeys.forEach((key) => {
-    if (key in filteredProps) {
-      delete filteredProps[key as string];
-    }
-  });
-
-  // Remove style props
-  stylePropKeys.forEach((key) => {
-    if (key in filteredProps) {
-      delete filteredProps[key as string];
-    }
-  });
+export const Box = ({ render, children, ...props }: BoxProps) => {
+  const toggleAttrs = extractToggleAttributes(props);
+  /** @todo fix types */
+  const styleAttrs = styleProps(props, STYLE_PROPS as any);
 
   const propsWithUiid = {
-    "data-uiid": "layout-box",
-    ...filteredProps,
-    style: { ...styles, ...variants },
+    uiid: "box",
+    "uiid-cat": "layout",
+    ...props,
+    style: { ...props.style, ...styleAttrs },
+    ...toggleAttrs,
   };
 
   if (isValidElement(render)) {
     return cloneElement(render, {
       ...propsWithUiid,
       children: children ?? render.props.children,
-      className: cx(allProps.className, render.props.className),
+      className: cx(props.className, render.props.className),
     });
   }
 
   return <div {...propsWithUiid}>{children}</div>;
 };
 Box.displayName = "Box";
+
+export const extractToggleAttributes = (props: Record<string, any>) => {
+  return TOGGLE_PROPS.reduce((acc, key) => {
+    if (props[key] !== undefined) {
+      acc[key] = props[key] === true ? "true" : props[key];
+    }
+    return acc;
+  }, {} as Record<string, string>);
+};

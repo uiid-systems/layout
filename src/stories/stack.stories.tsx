@@ -9,12 +9,8 @@ const meta = {
   component: Stack,
   args: { gap: 4 },
   render: (args) => (
-    <Group gap={4} fullscreen>
+    <Group gap={1} fullscreen>
       <Stack {...args}>
-        <Boxes />
-      </Stack>
-
-      <Stack {...args} wrap style={{ maxHeight: 144 }}>
         <Boxes />
       </Stack>
 

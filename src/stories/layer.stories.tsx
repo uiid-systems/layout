@@ -12,7 +12,7 @@ const meta = {
   component: Layer,
   args: {},
   render: (args) => (
-    <Stack gap={4}>
+    <Stack gap={1}>
       <Layer {...args}>
         <div style={{ background: "tomato", height: 64, width: 64 }} />
         <div style={{ background: "gold", height: 64, width: 64 }} />

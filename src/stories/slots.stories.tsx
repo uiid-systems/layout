@@ -21,7 +21,7 @@ const meta = {
     ...disableArgTypes("before", "after", "render", "direction", "gap", "ref"),
   },
   render: (args) => (
-    <Stack gap={4}>
+    <Stack gap={1}>
       <Slots {...args}>
         <Box style={{ background: "gold", height: 64, width: 64 }} />
       </Slots>

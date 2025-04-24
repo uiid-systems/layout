@@ -6,12 +6,6 @@ export type GroupProps = {
 } & BoxProps;
 
 export const Group = ({ evenly, className, ...props }: GroupProps) => {
-  return (
-    <Box
-      data-uiid="layout-group"
-      className={cx(className, { evenly })}
-      {...props}
-    />
-  );
+  return <Box uiid="group" className={cx(className, { evenly })} {...props} />;
 };
 Group.displayName = "Group";

@@ -7,22 +7,18 @@ import { Stack } from "../components/stack";
 const meta = {
   title: "Positional/Group",
   component: Group,
-  args: { gap: 4 },
+  args: { gap: 1 },
   render: (args) => (
-    <Stack gap={4} fullwidth>
+    <Stack gap={1} fullwidth>
       <Group {...args}>
         <Boxes />
       </Group>
 
-      <Group {...args} wrap style={{ maxWidth: 144 }}>
+      <Group {...args} ax="space-between" fullwidth>
         <Boxes />
       </Group>
 
-      <Group {...args} ax="space-between" ay="center" fullwidth>
-        <Boxes />
-      </Group>
-
-      <Group {...args} evenly>
+      <Group {...args} fullwidth evenly>
         <Boxes />
       </Group>
     </Stack>
