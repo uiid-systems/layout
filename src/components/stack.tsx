@@ -4,16 +4,9 @@ import { Box, type BoxProps } from "./box";
 export type StackProps = {
   ax?: BoxProps["ay"];
   ay?: BoxProps["ax"];
-  evenly?: boolean;
 } & Omit<BoxProps, "ax" | "ay">;
 
-export const Stack = ({ ax, ay, evenly, className, ...props }: StackProps) => (
-  <Box
-    uiid="stack"
-    ax={ay}
-    ay={ax}
-    className={cx(className, { evenly })}
-    {...props}
-  />
+export const Stack = ({ ax, ay, className, ...props }: StackProps) => (
+  <Box uiid="stack" ax={ay} ay={ax} className={className} {...props} />
 );
 Stack.displayName = "Stack";

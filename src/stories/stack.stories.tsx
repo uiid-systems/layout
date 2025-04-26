@@ -7,9 +7,9 @@ import { Stack } from "../components/stack";
 const meta = {
   title: "Positional/Stack",
   component: Stack,
-  args: { gap: 4 },
+  args: { gap: 1 },
   render: (args) => (
-    <Group gap={1} fullscreen>
+    <Group gap={1} screenheight>
       <Stack {...args}>
         <Boxes />
       </Stack>

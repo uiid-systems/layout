@@ -1,11 +1,8 @@
-import { cx } from "@uiid/core/styles";
 import { Box, type BoxProps } from "./box";
 
-export type GroupProps = {
-  evenly?: boolean;
-} & BoxProps;
+export type GroupProps = BoxProps;
 
-export const Group = ({ evenly, className, ...props }: GroupProps) => {
-  return <Box uiid="group" className={cx(className, { evenly })} {...props} />;
+export const Group = ({ ...props }: GroupProps) => {
+  return <Box uiid="group" {...props} />;
 };
 Group.displayName = "Group";

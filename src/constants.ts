@@ -1,7 +1,11 @@
-import type { ToggleProps } from "@uiid/style-props/toggles";
+import type { TogglePropsArray } from "@uiid/style-props";
 
-export const TOGGLE_PROPS: Array<keyof ToggleProps> = [
+export const TOGGLE_PROPS = [
+  "evenly",
   "fullwidth",
-  "interactive",
   "fullheight",
-] as const;
+  "fullscreen",
+  "interactive",
+  "screenwidth",
+  "screenheight",
+] as const satisfies TogglePropsArray;

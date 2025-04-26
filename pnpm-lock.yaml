@@ -16,7 +16,7 @@ importers:
         version: 0.0.0-alpha.31(storybook@8.6.12)(typescript@5.7.2)
       '@uiid/style-props':
         specifier: latest
-        version: 0.0.0-alpha.29(storybook@8.6.12)(typescript@5.7.2)
+        version: 0.0.0-alpha.39(storybook@8.6.12)(typescript@5.7.2)
       react:
         specifier: ^19.0.0
         version: 19.1.0
@@ -1110,8 +1110,8 @@ packages:
     resolution: {integrity: sha512-Y95v6cGxszVKdo/4RV/2Q5gMEbW3leiD9RtE5t6Fekp+3j3DbYKoeAq9u1+6lmAOLSFNdp+Fa1JhtfzwjbETtg==}
     engines: {node: '>=18.0.0'}
 
-  '@uiid/style-props@0.0.0-alpha.29':
-    resolution: {integrity: sha512-/TRfOfiKMIetVyHL/i0eBVRHIrA2iU7F8NQ7DP3iP7ajnSncBrunNz+CCpsuLZm9oJhRsJNk57tAoRyTuIs3tg==}
+  '@uiid/style-props@0.0.0-alpha.39':
+    resolution: {integrity: sha512-+ta+jqN5wh7WPaxYUotn11kjh2WDEfhlRyAipbJQuycVu1VWAl/7OXeLrlXyWfhQe3NE+2Banb9DQO9pELq9PA==}
     engines: {node: '>=18.0.0'}
 
   '@vitejs/plugin-react@4.4.1':
@@ -3140,7 +3140,7 @@ snapshots:
       - storybook
       - typescript
 
-  '@uiid/style-props@0.0.0-alpha.29(storybook@8.6.12)(typescript@5.7.2)':
+  '@uiid/style-props@0.0.0-alpha.39(storybook@8.6.12)(typescript@5.7.2)':
     dependencies:
       '@uiid/core': 0.0.0-alpha.31(storybook@8.6.12)(typescript@5.7.2)
     transitivePeerDependencies:

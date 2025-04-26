@@ -26,10 +26,3 @@
   display: inline-flex;
   align-items: center;
 }
-
-/* shared, MOVE TO TOGGLE PROP?? */
-[uiid-cat="layout"][uiid="group"].evenly > *,
-[uiid-cat="layout"][uiid="stack"].evenly > *,
-[uiid-cat="layout"][uiid="slots"].evenly > * {
-  flex: 1;
-}

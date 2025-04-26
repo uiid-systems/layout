@@ -11,7 +11,7 @@ const meta = {
   component: Slots,
   args: {
     direction: "row",
-    gap: 4,
+    gap: 1,
     before: <Box style={{ background: "tomato", height: 64, width: 64 }} />,
     after: (
       <Box style={{ background: "mediumseagreen", height: 64, width: 64 }} />
