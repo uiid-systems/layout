@@ -1,7 +1,7 @@
 {
   "name": "@uiid/layout",
   "description": "react layout components",
-  "version": "0.0.0-alpha.28",
+  "version": "0.0.0-alpha.29",
   "exports": {
     "./styles.css": "./dist/styles.css",
     ".": {
@@ -20,13 +20,11 @@
     "build-storybook": "storybook build",
     "chromatic": "npx chromatic --project-token=chpt_5fe849495d2cbd5"
   },
-  "dependencies": {
-    "@uiid/core": "latest",
-    "@uiid/style-props": "latest"
-  },
   "peerDependencies": {
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "@uiid/core": "latest",
+    "@uiid/style-props": "latest"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^8.6.12",
