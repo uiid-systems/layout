@@ -1,14 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { disableArgTypes } from "@uiid/core/storybook";
 
 import { Box } from "../components/box";
 
 const meta = {
   title: "Primitives/Box",
   component: Box,
-  args: {
-    hidden: false,
-  },
+  args: {},
   render: (args) => (
     <Box
       {...args}
@@ -18,9 +15,6 @@ const meta = {
       style={{ background: "tomato", width: 64, height: 64 }}
     />
   ),
-  argTypes: {
-    ...disableArgTypes("render", "ref"),
-  },
 } satisfies Meta<typeof Box>;
 
 export default meta;

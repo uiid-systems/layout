@@ -1,4 +1,3 @@
-import { cx } from "@uiid/core/styles";
 import { Box, type BoxProps } from "./box";
 
 export type StackProps = {

@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { disableArgTypes } from "@uiid/core/storybook";
 
 import { Box } from "../components/box";
 import { Stack } from "../components/stack";
@@ -10,22 +9,18 @@ const meta = {
   title: "Wrappers/Slots",
   component: Slots,
   args: {
-    direction: "row",
     gap: 1,
     before: <Box style={{ background: "tomato", height: 64, width: 64 }} />,
     after: (
       <Box style={{ background: "mediumseagreen", height: 64, width: 64 }} />
     ),
   },
-  argTypes: {
-    ...disableArgTypes("before", "after", "render", "direction", "gap", "ref"),
-  },
   render: (args) => (
     <Stack gap={1}>
       <Slots {...args}>
         <Box style={{ background: "gold", height: 64, width: 64 }} />
       </Slots>
-      <Slots {...args} direction="column">
+      <Slots {...args}>
         <Box style={{ background: "gold", height: 64, width: 64 }} />
       </Slots>
       <Slots {...args} before={undefined}>

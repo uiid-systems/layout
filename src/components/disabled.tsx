@@ -1,3 +1,4 @@
+import { Box } from "./box";
 import { Conditional, type ConditionalProps } from "./conditional";
 
 export type DisabledProps = React.PropsWithChildren<{
@@ -10,7 +11,7 @@ export const Disabled = ({ children, disabled }: DisabledProps) => {
       aria-disabled={disabled}
       data-disabled={disabled}
       condition={disabled}
-      wrapper={<div uiid="disabled" style={{ cursor: "not-allowed" }} />}
+      wrapper={<Box uiid="disabled" style={{ cursor: "not-allowed" }} />}
     >
       {children}
     </Conditional>

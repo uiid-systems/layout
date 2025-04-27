@@ -13,7 +13,7 @@ importers:
     dependencies:
       '@uiid/core':
         specifier: latest
-        version: 0.0.0-alpha.31(storybook@8.6.12)(typescript@5.7.2)
+        version: 0.0.0-alpha.33(storybook@8.6.12)(typescript@5.7.2)
       '@uiid/style-props':
         specifier: latest
         version: 0.0.0-alpha.39(storybook@8.6.12)(typescript@5.7.2)
@@ -1106,8 +1106,8 @@ packages:
   '@types/uuid@9.0.8':
     resolution: {integrity: sha512-jg+97EGIcY9AGHJJRaaPVgetKDsrTgbRjQ5Msgjh/DQKEFl0DtyRr/VCOyD1T2R1MNeWPK/u7JoGhlDZnKBAfA==}
 
-  '@uiid/core@0.0.0-alpha.31':
-    resolution: {integrity: sha512-Y95v6cGxszVKdo/4RV/2Q5gMEbW3leiD9RtE5t6Fekp+3j3DbYKoeAq9u1+6lmAOLSFNdp+Fa1JhtfzwjbETtg==}
+  '@uiid/core@0.0.0-alpha.33':
+    resolution: {integrity: sha512-rM7ZhQpQODYtYv6waBF05jvkqYkiTbWg88EIkGdVbWil8TA7f8k3WidOaNTD5nqy9bXFen7BIZvnFSetxK4e1g==}
     engines: {node: '>=18.0.0'}
 
   '@uiid/style-props@0.0.0-alpha.39':
@@ -1393,8 +1393,8 @@ packages:
   eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
 
-  electron-to-chromium@1.5.141:
-    resolution: {integrity: sha512-qS+qH9oqVYc1ooubTiB9l904WVyM6qNYxtOEEGReoZXw3xlqeYdFr5GclNzbkAufWgwWLEPoDi3d9MoRwwIjGw==}
+  electron-to-chromium@1.5.143:
+    resolution: {integrity: sha512-QqklJMOFBMqe46k8iIOwA9l2hz57V2OKMmP5eSWcUvwx+mASAsbU+wkF1pHjn9ZVSBPrsYWr4/W/95y5SwYg2g==}
 
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
@@ -3131,7 +3131,7 @@ snapshots:
 
   '@types/uuid@9.0.8': {}
 
-  '@uiid/core@0.0.0-alpha.31(storybook@8.6.12)(typescript@5.7.2)':
+  '@uiid/core@0.0.0-alpha.33(storybook@8.6.12)(typescript@5.7.2)':
     dependencies:
       '@storybook/types': 8.6.12(storybook@8.6.12)
       cva: 1.0.0-beta.3(typescript@5.7.2)
@@ -3142,7 +3142,7 @@ snapshots:
 
   '@uiid/style-props@0.0.0-alpha.39(storybook@8.6.12)(typescript@5.7.2)':
     dependencies:
-      '@uiid/core': 0.0.0-alpha.31(storybook@8.6.12)(typescript@5.7.2)
+      '@uiid/core': 0.0.0-alpha.33(storybook@8.6.12)(typescript@5.7.2)
     transitivePeerDependencies:
       - storybook
       - typescript
@@ -3285,7 +3285,7 @@ snapshots:
   browserslist@4.24.4:
     dependencies:
       caniuse-lite: 1.0.30001715
-      electron-to-chromium: 1.5.141
+      electron-to-chromium: 1.5.143
       node-releases: 2.0.19
       update-browserslist-db: 1.1.3(browserslist@4.24.4)
 
@@ -3410,7 +3410,7 @@ snapshots:
 
   eastasianwidth@0.2.0: {}
 
-  electron-to-chromium@1.5.141: {}
+  electron-to-chromium@1.5.143: {}
 
   emoji-regex@8.0.0: {}
 
