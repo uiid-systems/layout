@@ -26,3 +26,9 @@
   display: inline-flex;
   align-items: center;
 }
+
+/* disabled */
+[uiid-cat="layout"][uiid="disabled"] {
+  display: contents;
+  cursor: not-allowed;
+}

@@ -20,7 +20,7 @@ const meta = {
       <Slots {...args}>
         <Box style={{ background: "gold", height: 64, width: 64 }} />
       </Slots>
-      <Slots {...args}>
+      <Slots {...args} direction="column">
         <Box style={{ background: "gold", height: 64, width: 64 }} />
       </Slots>
       <Slots {...args} before={undefined}>
