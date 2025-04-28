@@ -1,34 +1,34 @@
 /* group */
-[uiid-cat="layout"][uiid="group"] {
+[uiid_cat="layout"][uiid="group"] {
   display: flex;
 }
-[uiid-cat="layout"][uiid="group"].inline {
+[uiid_cat="layout"][uiid="group"].inline {
   display: inline-flex;
 }
 
 /* stack */
-[uiid-cat="layout"][uiid="stack"] {
+[uiid_cat="layout"][uiid="stack"] {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
 /* layer */
-[uiid-cat="layout"][uiid="layer"] {
+[uiid_cat="layout"][uiid="layer"] {
   display: grid;
 }
-[uiid-cat="layout"][uiid="layer"] > * {
+[uiid_cat="layout"][uiid="layer"] > * {
   grid-area: 1 / 1;
 }
 
 /* slots */
-[uiid-cat="layout"][uiid="slots"] {
+[uiid_cat="layout"][uiid="slots"] {
   display: inline-flex;
   align-items: center;
 }
 
 /* disabled */
-[uiid-cat="layout"][uiid="disabled"] {
+[uiid_cat="layout"][uiid="disabled"] {
   display: contents;
   cursor: not-allowed;
 }

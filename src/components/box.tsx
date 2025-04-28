@@ -29,7 +29,7 @@ export const Box = ({ render, children, ...props }: BoxProps) => {
 
   const propsWithUiid = {
     uiid: "box",
-    "uiid-cat": "layout",
+    uiid_cat: "layout",
     ...props,
     style: { ...props.style, ...styleAttrs },
     ...toggleAttrs,
