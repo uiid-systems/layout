@@ -10,17 +10,18 @@ import type {
   LayoutNativeProps,
   LayoutStyleProps,
   LayoutToggleProps,
+  LayoutUiidProps,
 } from "../types";
 import { TOGGLE_PROPS } from "../constants";
 
 export type BoxProps = React.PropsWithChildren<{
   render?: RenderProp;
   ref?: React.Ref<any>;
-  uiid?: string;
 }> &
   LayoutNativeProps &
   LayoutStyleProps &
-  LayoutToggleProps;
+  LayoutToggleProps &
+  LayoutUiidProps;
 
 export const Box = ({ render, children, ...props }: BoxProps) => {
   const toggleAttrs = extractToggleAttributes(props, TOGGLE_PROPS);

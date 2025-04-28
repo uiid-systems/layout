@@ -13,3 +13,9 @@ export type LayoutToggleProps = Pick<
   ToggleProps,
   (typeof TOGGLE_PROPS)[number]
 >;
+
+/** @todo move to core */
+export type LayoutUiidProps = {
+  uiid?: string;
+  uiid_cat?: string;
+};
