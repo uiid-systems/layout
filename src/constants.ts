@@ -5,6 +5,7 @@ export const TOGGLE_PROPS = [
   "fullwidth",
   "fullheight",
   "fullscreen",
+  "hidden",
   "interactive",
   "screenwidth",
   "screenheight",
