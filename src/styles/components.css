@@ -1,34 +1,26 @@
-/* group */
-[uiid_cat="layout"][uiid="group"] {
+[uiid="group"] {
   display: flex;
 }
-[uiid_cat="layout"][uiid="group"].inline {
-  display: inline-flex;
-}
 
-/* stack */
-[uiid_cat="layout"][uiid="stack"] {
+[uiid="stack"] {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-/* layer */
-[uiid_cat="layout"][uiid="layer"] {
+[uiid="layer"] {
   display: grid;
 }
-[uiid_cat="layout"][uiid="layer"] > * {
+[uiid="layer"] > * {
   grid-area: 1 / 1;
 }
 
-/* slots */
-[uiid_cat="layout"][uiid="slots"] {
+[uiid="slots"] {
   display: inline-flex;
   align-items: center;
 }
 
-/* disabled */
-[uiid_cat="layout"][uiid="disabled"] {
+[uiid="disabled"] {
   display: contents;
   cursor: not-allowed;
 }

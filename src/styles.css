@@ -1,2 +1,5 @@
+@import "@uiid/core/styles.css";
+@import "@uiid/style-props/styles.css";
+
 @import url("./styles/variables.css") layer(uiid.layout);
 @import url("./styles/components.css") layer(uiid.layout);
