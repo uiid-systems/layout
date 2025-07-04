@@ -12,9 +12,15 @@ export const Group = ({ switch: breakpoint, ...props }: GroupProps) => {
   const breakpointId = `${breakpoint}-${randomId}`;
 
   if (breakpoint && typeof window !== "undefined") {
-    const style = document.createElement("style");
-    style.textContent = `@media (width <= ${breakpoint}px) {[uiid="${uiid}"][data-switch="${breakpointId}"] { flex-direction: column; }}`;
-    document.head.appendChild(style);
+    const styleId = `${uiid}-style-${breakpointId}`;
+    const existingStyle = document.getElementById(styleId);
+
+    if (!existingStyle) {
+      const style = document.createElement("style");
+      style.id = styleId;
+      style.textContent = `@media (width <= ${breakpoint}px) {[uiid="${uiid}"][data-switch="${breakpointId}"] { flex-direction: column; }}`;
+      document.head.appendChild(style);
+    }
   }
 
   return (
