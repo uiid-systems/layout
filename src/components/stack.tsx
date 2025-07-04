@@ -16,18 +16,19 @@ export const Stack = ({
   className,
   ...props
 }: StackProps) => {
-  const breakpointId = useId();
+  const randomId = useId();
+  const breakpointId = `${breakpoint}-${randomId}`;
 
   if (breakpoint) {
     const style = document.createElement("style");
-    style.textContent = `@media (width <= ${breakpoint}px) {[uiid="${uiid}"][data-breakpoint-id="${breakpointId}"] { flex-direction: row; }}`;
+    style.textContent = `@media (width <= ${breakpoint}px) {[uiid="${uiid}"][data-switch="${breakpointId}"] { flex-direction: row; }}`;
     document.head.appendChild(style);
   }
 
   return (
     <Box
       uiid={uiid}
-      data-breakpoint-id={breakpoint ? breakpointId : undefined}
+      data-switch={breakpoint ? breakpointId : undefined}
       ax={ay}
       ay={ax}
       className={className}

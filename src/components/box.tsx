@@ -1,4 +1,4 @@
-import { cx, type RenderProp } from "@uiid/core";
+import { cx, type RenderProp, type Uiid } from "@uiid/core";
 import {
   extractStyleAttributes,
   extractToggleAttributes,
@@ -9,7 +9,8 @@ import { isValidElement, cloneElement } from "react";
 import type { LayoutBaseComponentProps } from "../types";
 import { TOGGLE_PROPS } from "../constants";
 
-export type BoxProps = LayoutBaseComponentProps &
+export type BoxProps = Uiid &
+  LayoutBaseComponentProps &
   React.PropsWithChildren<{
     render?: RenderProp;
     ref?: React.Ref<any>;

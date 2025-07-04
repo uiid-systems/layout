@@ -8,18 +8,19 @@ export type GroupProps = BoxProps & {
 };
 
 export const Group = ({ switch: breakpoint, ...props }: GroupProps) => {
-  const breakpointId = useId();
+  const randomId = useId();
+  const breakpointId = `${breakpoint}-${randomId}`;
 
   if (breakpoint) {
     const style = document.createElement("style");
-    style.textContent = `@media (width <= ${breakpoint}px) {[uiid="${uiid}"][data-breakpoint-id="${breakpointId}"] { flex-direction: column; }}`;
+    style.textContent = `@media (width <= ${breakpoint}px) {[uiid="${uiid}"][data-switch="${breakpointId}"] { flex-direction: column; }}`;
     document.head.appendChild(style);
   }
 
   return (
     <Box
       uiid={uiid}
-      data-breakpoint-id={breakpoint ? breakpointId : undefined}
+      data-switch={breakpoint ? breakpointId : undefined}
       {...props}
     />
   );
