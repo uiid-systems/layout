@@ -1,6 +1,3 @@
-@import "@uiid/core/styles.css";
-@import "@uiid/style-props/styles.css";
-
 @layer uiid.layout {
   [uiid="group"] {
     display: flex;

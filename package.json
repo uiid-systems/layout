@@ -1,9 +1,9 @@
 {
   "name": "@uiid/layout",
   "description": "react layout components",
-  "version": "0.0.0-alpha.35",
+  "version": "0.0.0-alpha.36",
   "exports": {
-    "./styles.css": "./dist/styles.css",
+    "./styles": "./dist/styles.css",
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs"
