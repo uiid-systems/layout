@@ -1,5 +1,6 @@
 import { useId } from "react";
 import { Box, type BoxProps } from "./box";
+import { injectBreakpointStyle } from "../utils";
 
 const uiid = "stack";
 
@@ -19,16 +20,13 @@ export const Stack = ({
   const randomId = useId();
   const breakpointId = `${breakpoint}-${randomId}`;
 
-  if (breakpoint && typeof window !== "undefined") {
-    const styleId = `${uiid}-style-${breakpointId}`;
-    const existingStyle = document.getElementById(styleId);
-
-    if (!existingStyle) {
-      const style = document.createElement("style");
-      style.id = styleId;
-      style.textContent = `@media (width <= ${breakpoint}px) {[uiid="${uiid}"][data-switch="${breakpointId}"] { flex-direction: row; }}`;
-      document.head.appendChild(style);
-    }
+  if (breakpoint) {
+    injectBreakpointStyle(
+      uiid,
+      breakpointId,
+      breakpoint,
+      "flex-direction: row"
+    );
   }
 
   return (
