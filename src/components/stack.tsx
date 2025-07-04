@@ -19,7 +19,7 @@ export const Stack = ({
   const randomId = useId();
   const breakpointId = `${breakpoint}-${randomId}`;
 
-  if (breakpoint) {
+  if (breakpoint && document) {
     const style = document.createElement("style");
     style.textContent = `@media (width <= ${breakpoint}px) {[uiid="${uiid}"][data-switch="${breakpointId}"] { flex-direction: row; }}`;
     document.head.appendChild(style);
