@@ -9,11 +9,11 @@ import { isValidElement, cloneElement } from "react";
 import type { LayoutBaseComponentProps } from "../types";
 import { TOGGLE_PROPS } from "../constants";
 
-export type BoxProps = React.PropsWithChildren<{
-  render?: RenderProp;
-  ref?: React.Ref<any>;
-}> &
-  LayoutBaseComponentProps;
+export type BoxProps = LayoutBaseComponentProps &
+  React.PropsWithChildren<{
+    render?: RenderProp;
+    ref?: React.Ref<any>;
+  }>;
 
 const prepareProps = (props: Omit<BoxProps, "render" | "children">) => {
   const toggleAttrs = extractToggleAttributes(props, TOGGLE_PROPS);

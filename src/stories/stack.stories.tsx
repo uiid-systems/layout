@@ -21,6 +21,10 @@ const meta = {
       <Stack {...args} fullheight evenly>
         <Boxes />
       </Stack>
+
+      <Stack {...args} switch={640}>
+        <Boxes />
+      </Stack>
     </Group>
   ),
 } satisfies Meta<typeof Stack>;

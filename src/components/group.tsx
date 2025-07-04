@@ -1,8 +1,28 @@
+import { useId } from "react";
 import { Box, type BoxProps } from "./box";
 
-export type GroupProps = BoxProps;
+const uiid = "group";
 
-export const Group = ({ ...props }: GroupProps) => {
-  return <Box uiid="group" {...props} />;
+export type GroupProps = BoxProps & {
+  switch?: number;
 };
+
+export const Group = ({ switch: breakpoint, ...props }: GroupProps) => {
+  const breakpointId = useId();
+
+  if (breakpoint) {
+    const style = document.createElement("style");
+    style.textContent = `@media (width <= ${breakpoint}px) {[uiid="${uiid}"][data-breakpoint-id="${breakpointId}"] { flex-direction: column; }}`;
+    document.head.appendChild(style);
+  }
+
+  return (
+    <Box
+      uiid={uiid}
+      data-breakpoint-id={breakpoint ? breakpointId : undefined}
+      {...props}
+    />
+  );
+};
+
 Group.displayName = "Group";
