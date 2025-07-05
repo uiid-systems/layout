@@ -28,7 +28,7 @@ export const injectBreakpointStyle = (
     style.id = styleId;
     style.setAttribute("type", "text/css");
     style.textContent = `
-    :where(*:has([uiid="${componentId}"][data-switch="${breakpointId}"])) {
+    :where(*:has(> [uiid="${componentId}"][data-switch="${breakpointId}"])) {
       container-type: inline-size;
       width: 100%;
       @container (width <= ${breakpointValue}px) {
