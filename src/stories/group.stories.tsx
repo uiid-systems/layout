@@ -22,7 +22,7 @@ const meta = {
         <Boxes />
       </Group>
 
-      <Group {...args} switch={640}>
+      <Group {...args} switch={360}>
         <Boxes />
       </Group>
     </Stack>

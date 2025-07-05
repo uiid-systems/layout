@@ -1,1 +1,4 @@
+@import "@uiid/core/styles.css";
+@import "@uiid/style-props/styles.css";
+
 @import "../src/styles.css";
