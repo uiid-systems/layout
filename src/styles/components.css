@@ -1,26 +1,26 @@
-[uiid="group"] {
+[data-uiid="group"] {
   display: flex;
 }
 
-[uiid="stack"] {
+[data-uiid="stack"] {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-[uiid="layer"] {
+[data-uiid="layer"] {
   display: grid;
 }
-[uiid="layer"] > * {
+[data-uiid="layer"] > * {
   grid-area: 1 / 1;
 }
 
-[uiid="slots"] {
+[data-uiid="slots"] {
   display: inline-flex;
   align-items: center;
 }
 
-[uiid="disabled"] {
+[data-uiid="disabled"] {
   display: contents;
   cursor: not-allowed;
 }

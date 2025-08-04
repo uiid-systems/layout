@@ -48,5 +48,4 @@ export const Box = ({ render, children, ...props }: BoxProps) => {
 
   return <div {...propsWithUiid}>{children}</div>;
 };
-
 Box.displayName = "Box";
