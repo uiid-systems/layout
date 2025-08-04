@@ -1,7 +1,7 @@
 {
   "name": "@uiid/layout",
   "description": "uiid layout components",
-  "version": "0.0.0-alpha.46",
+  "version": "0.0.0-alpha.47",
   "exports": {
     "./styles": "./dist/styles.css",
     ".": {
