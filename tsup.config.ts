@@ -9,7 +9,7 @@ export default defineConfig({
   dts: true,
   splitting: false,
   format: ["esm"],
-  external: ["react", "react-dom"],
+  external: ["react", "react-dom", "@uiid/core", "@uiid/style-props"],
   injectStyle: false,
   noExternal: [],
 });
