@@ -1,4 +1,4 @@
-@import "@uiid/core/styles";
-@import "@uiid/style-props/styles.css";
+@import "@uiid/core/styles" layer(uiid.core);
+@import "@uiid/layout/styles" layer(uiid.layout);
 
 @import url("./styles/components.css") layer(uiid.layout);
