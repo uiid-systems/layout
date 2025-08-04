@@ -20,7 +20,7 @@ const prepareProps = (props: Omit<BoxProps, "render" | "children">) => {
   const styleAttrs = extractStyleAttributes(props, STYLE_PROPS as any);
 
   return {
-    uiid: "box",
+    "data-uiid": "box",
     ...props,
     style: { ...props.style, ...styleAttrs },
     ...toggleAttrs,

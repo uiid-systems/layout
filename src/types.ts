@@ -14,13 +14,7 @@ export type LayoutToggleProps = Pick<
   (typeof TOGGLE_PROPS)[number]
 >;
 
-/** @todo move to core */
-export type LayoutUiidProps = {
-  uiid?: string;
-};
-
 // Combined props for easier reuse within layout package
 export type LayoutBaseComponentProps = LayoutNativeProps &
   LayoutStyleProps &
-  LayoutToggleProps &
-  LayoutUiidProps;
+  LayoutToggleProps;

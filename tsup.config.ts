@@ -11,4 +11,5 @@ export default defineConfig({
   format: ["esm"],
   external: ["react", "react-dom"],
   injectStyle: false,
+  noExternal: [],
 });

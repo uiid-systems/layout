@@ -6,6 +6,6 @@ export type StackProps = {
 } & Omit<BoxProps, "ax" | "ay">;
 
 export const Stack = ({ ax, ay, className, ...props }: StackProps) => (
-  <Box uiid="stack" ax={ay} ay={ax} className={className} {...props} />
+  <Box data-uiid="stack" ax={ay} ay={ax} className={className} {...props} />
 );
 Stack.displayName = "Stack";

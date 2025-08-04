@@ -11,7 +11,7 @@ export const Disabled = ({ children, disabled }: DisabledProps) => {
       aria-disabled={disabled}
       data-disabled={disabled}
       condition={disabled}
-      wrapper={<Box uiid="disabled" />}
+      wrapper={<Box data-uiid="disabled" />}
     >
       {children}
     </Conditional>
